@@ -1,0 +1,26 @@
+{
+	"name": "@GlobalVariables",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "SFXVolume",
+			"type": "number",
+			"initialValue": "-5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 504212779445345
+		},
+		{
+			"eventType": "variable",
+			"name": "MusicVolume",
+			"type": "number",
+			"initialValue": "-15",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 479558875750579
+		}
+	],
+	"sid": 490165718114906
+}

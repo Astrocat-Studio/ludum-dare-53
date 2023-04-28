@@ -1,0 +1,15 @@
+{
+	"name": "DisclaimerText",
+	"plugin-id": "Text",
+	"sid": 335817311056245,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 691325502783079
+		}
+	],
+	"effectTypes": []
+}

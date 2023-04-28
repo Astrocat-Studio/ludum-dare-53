@@ -1,0 +1,555 @@
+{
+	"name": "_MainMenuLayout",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "@GlobalVariables"
+		},
+		{
+			"eventType": "variable",
+			"name": "ButtonClicked",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 914688358768643
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 663316150102732
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 484330695297623,
+					"parameters": {
+						"audio-file": "0_MainMenuMusic",
+						"loop": "looping",
+						"volume": "MusicVolume",
+						"stereo-pan": "0",
+						"tag-optional": "\"GameMusic\""
+					}
+				}
+			],
+			"sid": 426412292769636
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 431640611479110,
+					"parameters": {
+						"object": "txtButton_MainMenu"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 787964676014816,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 911670622165823,
+							"parameters": {
+								"object": "txtButton_MainMenu"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "txtButton_MainMenu",
+							"sid": 320074448028337,
+							"parameters": {
+								"opacity": "45"
+							}
+						}
+					],
+					"sid": 771497968286098
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 210202360819466,
+							"parameters": {
+								"object": "txtButton_MainMenu"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "txtButton_MainMenu",
+							"sid": 233414598379978,
+							"parameters": {
+								"opacity": "100"
+							}
+						}
+					],
+					"sid": 432093343955009
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 170504426098939,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "txtButton_MainMenu"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 740400640586959,
+					"parameters": {
+						"variable": "ButtonClicked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 971789021403634,
+					"parameters": {
+						"variable": "ButtonClicked",
+						"value": "true"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "txtButton_MainMenu",
+					"sid": 730535699014281,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "1.0"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 415782875535093,
+					"parameters": {
+						"audio-file": "SFX_MainMenuButton",
+						"loop": "not-looping",
+						"volume": "SFXVolume",
+						"stereo-pan": "0",
+						"tag-optional": "\"GameSFX\""
+					}
+				},
+				{
+					"callFunction": "ChangeScreen",
+					"sid": 542378519768862,
+					"parameters": [
+						"uppercase(txtButton_MainMenu.Text)"
+					]
+				}
+			],
+			"sid": 392489906853263
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 142711385299250,
+					"parameters": {
+						"variable": "ButtonClicked"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 181762978544844
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 857341458683199,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 573987318990757,
+					"parameters": {
+						"variable": "ButtonClicked",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 801390036044457
+		},
+		{
+			"functionName": "ChangeScreen",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "ScreenName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 838075253969154
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 415019294768376,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 112730044165622,
+							"parameters": {
+								"variable": "ScreenName",
+								"comparison": 0,
+								"value": "\"START\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 868704219944757,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 434163185753846,
+							"parameters": {
+								"layout": "Layout 2"
+							}
+						}
+					],
+					"sid": 422031795819840
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 785216833607327,
+							"parameters": {
+								"variable": "ScreenName",
+								"comparison": 0,
+								"value": "\"EXIT\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 629150992914279,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "close",
+							"objectClass": "Browser",
+							"sid": 645409558061046
+						}
+					],
+					"sid": 921693048468941
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 294644873820283,
+							"parameters": {
+								"variable": "ScreenName",
+								"comparison": 0,
+								"value": "\"CONFIGS\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 386215189913595,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 384947395970598,
+							"parameters": {
+								"layer": "\"FirstPage\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 572192708040148,
+							"parameters": {
+								"layer": "\"FirstPage\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 307586933651052,
+							"parameters": {
+								"layer": "\"ConfigPage\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 478689503749216,
+							"parameters": {
+								"layer": "\"ConfigPage\"",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 277669816340768
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 302058786510379,
+							"parameters": {
+								"variable": "ScreenName",
+								"comparison": 0,
+								"value": "\"BACK\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 411103872993473,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 564799270047019,
+							"parameters": {
+								"layer": "\"FirstPage\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 830085837779770,
+							"parameters": {
+								"layer": "\"FirstPage\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 442192608338023,
+							"parameters": {
+								"layer": "\"ConfigPage\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 729213248485536,
+							"parameters": {
+								"layer": "\"ConfigPage\"",
+								"interactive": false
+							}
+						}
+					],
+					"sid": 973048908666320
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 961182974983113,
+							"parameters": {
+								"variable": "ScreenName",
+								"comparison": 0,
+								"value": "\"TOGGLE FULLSCREEN\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 309617179413157,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 896826734913897
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 376840944990538
+								}
+							],
+							"sid": 578931937370634
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 590136318077364,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 422482327131331,
+									"parameters": {
+										"mode": "stretch-letterbox-scale",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 385472119453176
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 822093807770686,
+					"parameters": {
+						"interval-seconds": "0.2"
+					}
+				},
+				{
+					"id": "layer-is-interactive",
+					"objectClass": "System",
+					"sid": 419849366911788,
+					"parameters": {
+						"layer": "\"ConfigPage\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-volume",
+					"objectClass": "Audio",
+					"sid": 146115928499010,
+					"parameters": {
+						"tag": "\"GameMusic\"",
+						"db": "MusicVolume"
+					}
+				},
+				{
+					"id": "set-volume",
+					"objectClass": "Audio",
+					"sid": 691806786596229,
+					"parameters": {
+						"tag": "\"GameSFX\"",
+						"db": "SFXVolume"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 469402846428690,
+					"parameters": {
+						"variable": "MusicVolume",
+						"value": "MusicSliderBar.Value"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 353186106723578,
+					"parameters": {
+						"variable": "SFXVolume",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 135483461998607,
+					"parameters": {
+						"text": "MusicVolume & \" | \" & SFXVolume"
+					}
+				}
+			],
+			"sid": 596255782470051
+		}
+	],
+	"sid": 985151746802988
+}

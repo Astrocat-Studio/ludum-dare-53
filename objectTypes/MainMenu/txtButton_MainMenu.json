@@ -1,0 +1,15 @@
+{
+	"name": "txtButton_MainMenu",
+	"plugin-id": "Text",
+	"sid": 779629219266409,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 492393875341355
+		}
+	],
+	"effectTypes": []
+}

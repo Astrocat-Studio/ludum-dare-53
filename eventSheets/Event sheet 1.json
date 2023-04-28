@@ -1,5 +1,10 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
-	"sid": 941116332497577
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "@GlobalVariables"
+		}
+	],
+	"sid": 636090712062264
 }
