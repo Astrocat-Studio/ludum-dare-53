@@ -19,10 +19,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 80,
-						"y": 45,
-						"width": 160,
-						"height": 90,
+						"x": 107.99999931525991,
+						"y": 95.99999987628142,
+						"width": 345.06443658193444,
+						"height": 194.09874557733812,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -79,7 +79,7 @@
 								"text": "TOGGLE FULLSCREEN",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -104,10 +104,10 @@
 								}
 							},
 							"world": {
-								"x": 46.19450843372208,
-								"y": 62,
-								"width": 70.30050470327873,
-								"height": 8,
+								"x": 44.746186535038646,
+								"y": 140.97613863941717,
+								"width": 131.31764770114162,
+								"height": 14.943579509751899,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -126,7 +126,7 @@
 								"text": "BACK",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -151,10 +151,10 @@
 								}
 							},
 							"world": {
-								"x": 46.19450843372208,
-								"y": 71,
-								"width": 18.705195802336306,
-								"height": 8,
+								"x": 44.746186535038646,
+								"y": 151.46135288235195,
+								"width": 40.82026758806519,
+								"height": 17.45836526681712,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -173,7 +173,7 @@
 								"text": "MUSIC VOLUME",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -198,10 +198,10 @@
 								}
 							},
 							"world": {
-								"x": 46.19450843372208,
-								"y": 44,
-								"width": 51.21923004015248,
-								"height": 8,
+								"x": 44.746186535038646,
+								"y": 114.61234144818366,
+								"width": 98.00400606988025,
+								"height": 15.307376700985406,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -220,7 +220,7 @@
 								"text": "EFFECTS VOLUME",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -245,10 +245,10 @@
 								}
 							},
 							"world": {
-								"x": 46.19450843372208,
-								"y": 53,
-								"width": 60.24024090197874,
-								"height": 8,
+								"x": 44.746186535038646,
+								"y": 127.81197266266209,
+								"width": 113.76177844912021,
+								"height": 15.107745486506968,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -278,9 +278,9 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 99.39221040572507,
-								"y": 45.81185095234282,
-								"width": 24.836965610566992,
+								"x": 135.31059349307438,
+								"y": 119.38660340546154,
+								"width": 37.00286955950786,
 								"height": 3.234516154332553,
 								"originX": 0,
 								"originY": 0,
@@ -309,9 +309,9 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 106.78971780628481,
-								"y": 55.05279058691463,
-								"width": 24.836965610566992,
+								"x": 146.76340220994774,
+								"y": 132.97250873608368,
+								"width": 33.23723262293093,
 								"height": 3.234516154332553,
 								"originX": 0,
 								"originY": 0,
@@ -363,7 +363,7 @@
 								"text": "CONFIGS",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -388,10 +388,10 @@
 								}
 							},
 							"world": {
-								"x": 63.50000131491805,
-								"y": 62,
-								"width": 33,
-								"height": 8,
+								"x": 80.60861881505843,
+								"y": 145.59099406555183,
+								"width": 54.782760438853074,
+								"height": 13.280669197297716,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -410,7 +410,7 @@
 								"text": "EXIT",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -435,10 +435,10 @@
 								}
 							},
 							"world": {
-								"x": 63.50000131491805,
-								"y": 71,
-								"width": 33,
-								"height": 8,
+								"x": 80.60861881505843,
+								"y": 158.59099406555183,
+								"width": 54.782760438853074,
+								"height": 13.280669197297716,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -457,7 +457,7 @@
 								"text": "START",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 3,
+								"size": 5,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -482,10 +482,10 @@
 								}
 							},
 							"world": {
-								"x": 63.50000131491805,
-								"y": 53,
-								"width": 33,
-								"height": 8,
+								"x": 80.60861881505843,
+								"y": 132.59099406555183,
+								"width": 54.782760438853074,
+								"height": 13.280669197297716,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -590,10 +590,10 @@
 						}
 					},
 					"world": {
-						"x": 80.00000298219575,
-						"y": 17.930152402693494,
-						"width": 96,
-						"height": 32,
+						"x": 109.64428033190893,
+						"y": 34.18419454013837,
+						"width": 172.6684174836277,
+						"height": 57.55613916120923,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -639,8 +639,8 @@
 	"sid": 508947435736530,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 160,
-	"height": 90,
+	"width": 216,
+	"height": 192,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

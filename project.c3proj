@@ -57,8 +57,29 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "sliderbar",
 			"name": "Slider bar",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -78,6 +99,27 @@
 		},
 		{
 			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -87,6 +129,20 @@
 			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -99,8 +155,10 @@
 			"Audio",
 			"Mouse",
 			"Keyboard",
-			"Text",
-			"LayoutFadeTransitor"
+			"Player",
+			"EnemyTest",
+			"Tilemap",
+			"CollisionMap"
 		],
 		"subfolders": [
 			{
@@ -131,6 +189,24 @@
 				],
 				"subfolders": [],
 				"name": "MainMenu"
+			},
+			{
+				"items": [
+					"AtackHitbox",
+					"Sprite2",
+					"LayoutFadeTransitor"
+				],
+				"subfolders": [],
+				"name": "SystemObjects"
+			},
+			{
+				"items": [
+					"SceneFrames",
+					"Mask",
+					"CutscenesTexts"
+				],
+				"subfolders": [],
+				"name": "Cutscenes Assets"
 			}
 		]
 	},
@@ -138,21 +214,40 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"AstrocatDisclaimer"
+			"AstrocatDisclaimer",
+			"Enemy"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"LoadingLayout",
-			"MainMenu",
-			"Layout 2"
+			"TestArea",
+			"Buffer"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"LoadingLayout",
+					"MainMenu"
+				],
+				"subfolders": [],
+				"name": "Start"
+			},
+			{
+				"items": [
+					"Scene_0",
+					"Scene_1"
+				],
+				"subfolders": [],
+				"name": "Prologue"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"TestSheets",
+			"_scene0",
+			"_scene1"
 		],
 		"subfolders": [
 			{
@@ -323,7 +418,7 @@
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -359,14 +454,14 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders"
 	},
-	"viewportWidth": 160,
-	"viewportHeight": 90,
-	"firstLayout": null
+	"viewportWidth": 216,
+	"viewportHeight": 192,
+	"firstLayout": "LoadingLayout"
 }

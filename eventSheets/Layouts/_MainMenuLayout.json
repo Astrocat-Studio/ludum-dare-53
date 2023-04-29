@@ -255,11 +255,19 @@
 							}
 						},
 						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 326957260577161,
+							"parameters": {
+								"tag": "\"GameMusic\""
+							}
+						},
+						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 434163185753846,
+							"sid": 338867630588291,
 							"parameters": {
-								"layout": "Layout 2"
+								"layout": "Scene_0"
 							}
 						}
 					],
@@ -537,14 +545,6 @@
 					"parameters": {
 						"variable": "SFXVolume",
 						"value": "0"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Text",
-					"sid": 135483461998607,
-					"parameters": {
-						"text": "MusicVolume & \" | \" & SFXVolume"
 					}
 				}
 			],

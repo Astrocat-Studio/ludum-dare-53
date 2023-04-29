@@ -1,0 +1,17 @@
+{
+	"name": "Enemy",
+	"plugin-id": "Sprite",
+	"sid": 874357479671133,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 296299502367878
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"EnemyTest"
+	]
+}

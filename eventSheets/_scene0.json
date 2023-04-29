@@ -1,0 +1,68 @@
+{
+	"name": "_scene0",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 902284492260059
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 663069552203498,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "SceneFrames",
+					"sid": 478272417389161,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "Self.X",
+						"y": "-53",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 928381788344568
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "SceneFrames",
+					"sid": 501182109012230,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 658725465760998,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 330921030414975,
+					"parameters": {
+						"layout": "Scene_1"
+					}
+				}
+			],
+			"sid": 544778158099129
+		}
+	],
+	"sid": 330355960709843
+}
