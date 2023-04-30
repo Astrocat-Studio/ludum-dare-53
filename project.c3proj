@@ -113,13 +113,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Pathfinding",
-			"name": "Pathfinding",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -145,6 +138,13 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "6l4g7n9a6t5",
@@ -154,11 +154,7 @@
 			"NWjs",
 			"Audio",
 			"Mouse",
-			"Keyboard",
-			"Player",
-			"EnemyTest",
-			"Tilemap",
-			"CollisionMap"
+			"Keyboard"
 		],
 		"subfolders": [
 			{
@@ -185,7 +181,8 @@
 					"GameLogo",
 					"txtButton_MainMenu",
 					"MusicSliderBar",
-					"SFXSliderBar"
+					"SFXSliderBar",
+					"MenuTextArt"
 				],
 				"subfolders": [],
 				"name": "MainMenu"
@@ -193,8 +190,13 @@
 			{
 				"items": [
 					"AtackHitbox",
-					"Sprite2",
-					"LayoutFadeTransitor"
+					"GameCamera",
+					"LayoutFadeTransitor",
+					"CollisionMap",
+					"MouseSprite",
+					"FadeUp",
+					"CollectCollision",
+					"FadeDown"
 				],
 				"subfolders": [],
 				"name": "SystemObjects"
@@ -207,6 +209,39 @@
 				],
 				"subfolders": [],
 				"name": "Cutscenes Assets"
+			},
+			{
+				"items": [
+					"Player",
+					"Tilemap",
+					"Enemy1",
+					"Enemy2",
+					"PlayerGuns",
+					"Ammo",
+					"DemonEssence",
+					"Enemy3"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"GunLightSpots",
+							"LightSpots",
+							"GunShoot"
+						],
+						"subfolders": [],
+						"name": "FX"
+					}
+				],
+				"name": "Assets"
+			},
+			{
+				"items": [
+					"EliteRoom",
+					"Fogo",
+					"Pontuation"
+				],
+				"subfolders": [],
+				"name": "Map & Props"
 			}
 		]
 	},
@@ -235,24 +270,34 @@
 			},
 			{
 				"items": [
-					"Scene_0",
-					"Scene_1"
+					"Cutscene_1",
+					"Cutscene_2",
+					"Cutscene_3"
 				],
 				"subfolders": [],
 				"name": "Prologue"
+			},
+			{
+				"items": [
+					"Game",
+					"Elevator",
+					"FinalRoom",
+					"FinalBoss"
+				],
+				"subfolders": [],
+				"name": "Phases"
 			}
 		]
 	},
 	"eventSheets": {
 		"items": [
-			"TestSheets",
-			"_scene0",
-			"_scene1"
+			"TestSheets"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"@GlobalVariables"
+					"@GlobalVariables",
+					"@Main"
 				],
 				"subfolders": [],
 				"name": "System"
@@ -264,6 +309,29 @@
 				],
 				"subfolders": [],
 				"name": "Layouts"
+			},
+			{
+				"items": [
+					"$Phase1",
+					"$Phase2",
+					"$Phase3",
+					"$Phase4",
+					"$Phase5",
+					"$Elevator",
+					"$FinalRoom",
+					"$FinalBoss"
+				],
+				"subfolders": [],
+				"name": "Phases"
+			},
+			{
+				"items": [
+					"_Cutscene1",
+					"_Cutscene2",
+					"_Custscene3"
+				],
+				"subfolders": [],
+				"name": "Cutscenes"
 			}
 		]
 	},
@@ -289,6 +357,46 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "LD53_sfx_pistol-shoot.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 274537359222831,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LD53_sfx_player-step.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 126500275127316,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LD53_sfx_switch-wapon.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 419323584693961,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LD53_sfx_bullet-impact.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 591325666107876,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LD53_sfx_main-menu-botton.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 906198150320345,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -299,6 +407,22 @@
 					"name": "0_MainMenuMusic.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 556471448162509,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "1_LevelMusicOLD.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 608575609436329,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "1_LevelMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 563899017003685,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -461,7 +585,7 @@
 		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders"
 	},
-	"viewportWidth": 216,
-	"viewportHeight": 192,
+	"viewportWidth": 324,
+	"viewportHeight": 288,
 	"firstLayout": "LoadingLayout"
 }

@@ -1,0 +1,136 @@
+{
+	"name": "_Cutscene2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Variable1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 702232588042153
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 686510356897760
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 786627302588730,
+					"parameters": {
+						"variable": "Phase",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 250547484647070,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 134077175328184,
+					"parameters": {
+						"layer": "\"FirstScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 243067808559876,
+					"parameters": {
+						"layer": "\"SecondScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 739056442759882,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 633325902456720,
+					"parameters": {
+						"layer": "\"SecondScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 495038088933877,
+					"parameters": {
+						"layer": "\"ThirdScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 618515167989151,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 576935483283501,
+					"parameters": {
+						"layer": "\"ThirdScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 399299088455644,
+					"parameters": {
+						"layer": "\"FourthScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 139826653506483,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 400141239964767,
+					"parameters": {
+						"layout": "Game"
+					}
+				},
+				{
+					"callFunction": "EndGameVerify",
+					"sid": 239836434845554
+				}
+			],
+			"sid": 485373725738287
+		}
+	],
+	"sid": 362372737733134
+}

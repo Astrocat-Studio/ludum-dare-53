@@ -1,0 +1,165 @@
+{
+	"name": "_Cutscene1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 902284492260059
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 663069552203498,
+					"parameters": {
+						"seconds": "2"
+					}
+				}
+			],
+			"sid": 928381788344568,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "SceneFrames",
+							"sid": 558249166450966,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "SceneFrames",
+							"sid": 106993460657100,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Self.X",
+								"y": "72",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 490459632803920
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "SceneFrames",
+					"sid": 501182109012230,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 450230436168231,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 393787623878056,
+					"parameters": {
+						"layer": "\"FirstScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 377669138577491,
+					"parameters": {
+						"layer": "\"SecondScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 248167628846686,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 784336924768087,
+					"parameters": {
+						"layer": "\"SecondScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 987354962477385,
+					"parameters": {
+						"layer": "\"ThirdScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 847293559392199,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 429976627498911,
+					"parameters": {
+						"layer": "\"ThirdScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 362085972620607,
+					"parameters": {
+						"layer": "\"FourthScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 109617457923665,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 451639812168938,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 544778158099129
+		}
+	],
+	"sid": 330355960709843
+}

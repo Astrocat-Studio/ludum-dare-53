@@ -1,0 +1,84 @@
+{
+	"name": "GunLightSpots",
+	"plugin-id": "Sprite",
+	"sid": 537769926630108,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 732809921223686
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 490816845197885
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 236,
+						"height": 236,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4805219,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 478,
+						"height": 480,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 486921,
+						"collisionPoly": {
+							"points": [
+								0.0020920502092050207,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0.0020920502092050207,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 336,
+						"height": 336,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 359465,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 509413352373264,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

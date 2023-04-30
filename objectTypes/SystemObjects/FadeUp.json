@@ -1,0 +1,63 @@
+{
+	"name": "FadeUp",
+	"plugin-id": "Sprite",
+	"sid": 958823063015817,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 272651569765307
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 296,
+						"height": 455,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1222935,
+						"collisionPoly": {
+							"points": [
+								1,
+								0.5,
+								0.8564814814814815,
+								0.9318681318681319,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.5,
+								0,
+								0,
+								0.5,
+								0,
+								0.8564814814814815,
+								0.06813186813186813
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 774534575934028,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

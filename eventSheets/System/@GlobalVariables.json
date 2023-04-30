@@ -20,6 +20,64 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 479558875750579
+		},
+		{
+			"eventType": "comment",
+			"text": "Player Variables"
+		},
+		{
+			"eventType": "variable",
+			"name": "HP",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 504862935669043
+		},
+		{
+			"eventType": "variable",
+			"name": "DemonEssence",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 702386368606961
+		},
+		{
+			"eventType": "comment",
+			"text": "Game Variables"
+		},
+		{
+			"eventType": "variable",
+			"name": "NextSpawnNumber",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 383719758473406
+		},
+		{
+			"eventType": "variable",
+			"name": "SpawnCooldown",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 687366009294997
+		},
+		{
+			"eventType": "variable",
+			"name": "Phase",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 573389490650136
 		}
 	],
 	"sid": 490165718114906

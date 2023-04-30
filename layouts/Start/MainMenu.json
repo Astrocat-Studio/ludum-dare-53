@@ -18,18 +18,26 @@
 					"uid": 10,
 					"instanceVariables": {},
 					"behaviors": {},
+					"effects": {
+						"BlurHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 0.25
+							}
+						}
+					},
 					"world": {
-						"x": 107.99999931525991,
-						"y": 95.99999987628142,
-						"width": 345.06443658193444,
-						"height": 194.09874557733812,
+						"x": 161.99999430420593,
+						"y": 143.99998707842212,
+						"width": 326.2390226934866,
+						"height": 289.9902423942103,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
 							1,
 							1,
-							0.23199999999999865
+							1
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -79,7 +87,7 @@
 								"text": "TOGGLE FULLSCREEN",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -104,10 +112,10 @@
 								}
 							},
 							"world": {
-								"x": 44.746186535038646,
-								"y": 140.97613863941717,
-								"width": 131.31764770114162,
-								"height": 14.943579509751899,
+								"x": 48.706143913259524,
+								"y": 221.6406361455682,
+								"width": 217.30195367449403,
+								"height": 24.728352047163536,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -126,7 +134,7 @@
 								"text": "BACK",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -151,10 +159,10 @@
 								}
 							},
 							"world": {
-								"x": 44.746186535038646,
-								"y": 151.46135288235195,
-								"width": 40.82026758806519,
-								"height": 17.45836526681712,
+								"x": 48.706143913259524,
+								"y": 234.43135389782506,
+								"width": 74.67496286870504,
+								"height": 31.937634294906672,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -173,7 +181,7 @@
 								"text": "MUSIC VOLUME",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -198,10 +206,10 @@
 								}
 							},
 							"world": {
-								"x": 44.746186535038646,
-								"y": 114.61234144818366,
-								"width": 98.00400606988025,
-								"height": 15.307376700985406,
+								"x": 48.706143913259524,
+								"y": 186.57939139403922,
+								"width": 165.1154113843764,
+								"height": 25.789596798692497,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -220,7 +228,7 @@
 								"text": "EFFECTS VOLUME",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -245,10 +253,10 @@
 								}
 							},
 							"world": {
-								"x": 44.746186535038646,
-								"y": 127.81197266266209,
-								"width": 113.76177844912021,
-								"height": 15.107745486506968,
+								"x": 48.706143913259524,
+								"y": 204.16063188843438,
+								"width": 189.8196820642231,
+								"height": 25.208356304297315,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -278,9 +286,9 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 135.31059349307438,
-								"y": 119.38660340546154,
-								"width": 37.00286955950786,
+								"x": 187.97280417013698,
+								"y": 196.90993887457324,
+								"width": 79.27711736957433,
 								"height": 3.234516154332553,
 								"originX": 0,
 								"originY": 0,
@@ -309,9 +317,9 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 146.76340220994774,
-								"y": 132.97250873608368,
-								"width": 33.23723262293093,
+								"x": 212.4467947019253,
+								"y": 213.8849189241459,
+								"width": 62.84704332534032,
 								"height": 3.234516154332553,
 								"originX": 0,
 								"originY": 0,
@@ -363,7 +371,7 @@
 								"text": "CONFIGS",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -388,10 +396,10 @@
 								}
 							},
 							"world": {
-								"x": 80.60861881505843,
-								"y": 145.59099406555183,
-								"width": 54.782760438853074,
-								"height": 13.280669197297716,
+								"x": 116.30940267190599,
+								"y": 224.0008489254514,
+								"width": 91.38120232823003,
+								"height": 22.153018746237585,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -410,7 +418,7 @@
 								"text": "EXIT",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -435,10 +443,10 @@
 								}
 							},
 							"world": {
-								"x": 80.60861881505843,
-								"y": 158.59099406555183,
-								"width": 54.782760438853074,
-								"height": 13.280669197297716,
+								"x": 116.30940267190599,
+								"y": 241.0008489254514,
+								"width": 91.38120232823003,
+								"height": 22.153018746237585,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -457,7 +465,7 @@
 								"text": "START",
 								"enable-bbcode": true,
 								"font": "bitByBit_ [font]",
-								"size": 5,
+								"size": 8,
 								"line-height": 0,
 								"bold": false,
 								"italic": false,
@@ -482,10 +490,10 @@
 								}
 							},
 							"world": {
-								"x": 80.60861881505843,
-								"y": 132.59099406555183,
-								"width": 54.782760438853074,
-								"height": 13.280669197297716,
+								"x": 116.30940267190599,
+								"y": 207.0008489254514,
+								"width": 91.38120232823003,
+								"height": 22.153018746237585,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -563,39 +571,38 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "GameLogo",
+					"type": "MenuTextArt",
 					"properties": {
+						"text": "Demon Essence",
+						"enable-bbcode": true,
+						"font": "bitByBit_ [font]",
+						"size": 12,
+						"line-height": -4,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
 						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "top-left",
+						"read-aloud": false
 					},
-					"uid": 11,
+					"uid": 36,
 					"instanceVariables": {},
-					"behaviors": {
-						"Sine": {
-							"properties": {
-								"movement": "vertical",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 1,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
-						"x": 109.64428033190893,
-						"y": 34.18419454013837,
-						"width": 172.6684174836277,
-						"height": 57.55613916120923,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 33.530015660786944,
+						"y": 22.239329143419923,
+						"width": 258.5420822709247,
+						"height": 20.611650921978566,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -608,6 +615,39 @@
 				}
 			],
 			"sid": 813351089247582,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Transition",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 522999102232690,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,

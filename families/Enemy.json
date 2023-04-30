@@ -2,16 +2,53 @@
 	"name": "Enemy",
 	"plugin-id": "Sprite",
 	"sid": 874357479671133,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "SkillActived",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 436832192573061
+		},
+		{
+			"name": "StateMachine",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 388134533556878
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Flash",
 			"name": "Flash",
 			"sid": 296299502367878
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo2",
+			"sid": 424259593690561
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 354769777239841
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 315589485329026
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 906623259027091
 		}
 	],
 	"effectTypes": [],
 	"members": [
-		"EnemyTest"
+		"Enemy1",
+		"Enemy2",
+		"Enemy3"
 	]
 }

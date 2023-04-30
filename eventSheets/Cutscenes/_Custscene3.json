@@ -1,0 +1,87 @@
+{
+	"name": "_Custscene3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 258415252015845
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 941264139179159,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 565088090604497,
+					"parameters": {
+						"layer": "\"FirstScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 392003400675356,
+					"parameters": {
+						"layer": "\"SecondScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 737502018870059,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 579970179446842,
+					"parameters": {
+						"layer": "\"SecondScene\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 729176662440702,
+					"parameters": {
+						"layer": "\"ThirdScene\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 229606791984438,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 298257202564072,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 742531606389407
+		}
+	],
+	"sid": 298241731374286
+}

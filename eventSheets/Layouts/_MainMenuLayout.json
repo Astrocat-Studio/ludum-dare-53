@@ -21,14 +21,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 663316150102732
+					"sid": 304893496948102
 				}
 			],
 			"actions": [
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 484330695297623,
+					"sid": 882887836088305,
 					"parameters": {
 						"audio-file": "0_MainMenuMusic",
 						"loop": "looping",
@@ -36,9 +36,25 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"GameMusic\""
 					}
+				},
+				{
+					"callFunction": "Transition",
+					"sid": 646582978242422,
+					"parameters": [
+						"\"FadeIn\"",
+						"\"\""
+					]
+				},
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 602106297473965,
+					"parameters": {
+						"cursor-style": "normal"
+					}
 				}
 			],
-			"sid": 426412292769636
+			"sid": 953216520489316
 		},
 		{
 			"eventType": "block",
@@ -153,9 +169,9 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 415782875535093,
+					"sid": 320045291287077,
 					"parameters": {
-						"audio-file": "SFX_MainMenuButton",
+						"audio-file": "LD53_sfx_main-menu-botton",
 						"loop": "not-looping",
 						"volume": "SFXVolume",
 						"stereo-pan": "0",
@@ -267,7 +283,7 @@
 							"objectClass": "System",
 							"sid": 338867630588291,
 							"parameters": {
-								"layout": "Scene_0"
+								"layout": "Cutscene_1"
 							}
 						}
 					],
@@ -549,6 +565,208 @@
 				}
 			],
 			"sid": 596255782470051
+		},
+		{
+			"functionName": "Transition2",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "FXType",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 290938640807008
+				},
+				{
+					"name": "TargetLayout",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 534191189224319
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 582013288601911,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 926895661182817,
+							"parameters": {
+								"variable": "FXType",
+								"comparison": 0,
+								"value": "\"FadeIn\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 633608168997325,
+							"parameters": {
+								"object-to-create": "FadeUp",
+								"layer": "\"Transition\"",
+								"x": "87",
+								"y": "68",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeUp",
+							"sid": 310651927005192,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "-90",
+								"y": "-120",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 635030920876161,
+							"parameters": {
+								"object-to-create": "FadeDown",
+								"layer": "\"Transition\"",
+								"x": "228",
+								"y": "231",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeDown",
+							"sid": 457134614794467,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "430",
+								"y": "395",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 605407983932508,
+							"parameters": {
+								"tag": "\"GameMusic\""
+							}
+						}
+					],
+					"sid": 510091261231944
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 919741904286265,
+							"parameters": {
+								"variable": "FXType",
+								"comparison": 0,
+								"value": "\"FadeOut\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 156566228373651,
+							"parameters": {
+								"object-to-create": "FadeUp",
+								"layer": "\"Transition\"",
+								"x": "-90",
+								"y": "-120",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeUp",
+							"sid": 747384460220931,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "87",
+								"y": "68",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 781975908625626,
+							"parameters": {
+								"object-to-create": "FadeDown",
+								"layer": "\"Transition\"",
+								"x": "430",
+								"y": "395",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeDown",
+							"sid": 377075962413402,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "228",
+								"y": "231",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 326159029288033,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 738613919504138,
+							"parameters": {
+								"tag": "\"GameMusic\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 280693696200742,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 973172892622306,
+							"parameters": {
+								"layout": "TargetLayout"
+							}
+						}
+					],
+					"sid": 201571078132628
+				}
+			]
 		}
 	],
 	"sid": 985151746802988

@@ -1,0 +1,84 @@
+{
+	"name": "LightSpots",
+	"plugin-id": "Sprite",
+	"sid": 445144229636307,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 579396376450625
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 469340391000071
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 236,
+						"height": 236,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4598664,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 478,
+						"height": 480,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2682282,
+						"collisionPoly": {
+							"points": [
+								0.0020920502092050207,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0.0020920502092050207,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 336,
+						"height": 336,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4223466,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 672607645790097,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
