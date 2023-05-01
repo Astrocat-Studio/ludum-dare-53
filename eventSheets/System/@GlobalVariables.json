@@ -27,16 +27,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "HP",
-			"type": "number",
-			"initialValue": "100",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 504862935669043
-		},
-		{
-			"eventType": "variable",
 			"name": "DemonEssence",
 			"type": "number",
 			"initialValue": "0",
@@ -73,11 +63,25 @@
 			"eventType": "variable",
 			"name": "Phase",
 			"type": "number",
+			"initialValue": "1",
+			"comment": "4",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 573389490650136
+		},
+		{
+			"eventType": "comment",
+			"text": "Cutscene Control"
+		},
+		{
+			"eventType": "variable",
+			"name": "CutsceneStep",
+			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 573389490650136
+			"sid": 925178072337564
 		}
 	],
 	"sid": 490165718114906

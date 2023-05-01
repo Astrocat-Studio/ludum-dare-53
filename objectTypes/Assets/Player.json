@@ -20,7 +20,7 @@
 		},
 		{
 			"name": "Gun",
-			"type": "string",
+			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 124879818322534

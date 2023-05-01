@@ -1,0 +1,454 @@
+{
+	"name": "@GlobalFunctions",
+	"events": [
+		{
+			"functionName": "Transition",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "FXType",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 392639055935271
+				},
+				{
+					"name": "TargetLayout",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 101570619792410
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 368285929750630,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 559206847124216,
+							"parameters": {
+								"variable": "FXType",
+								"comparison": 0,
+								"value": "\"FadeIn\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 396926779701560,
+							"parameters": {
+								"object-to-create": "FadeUp",
+								"layer": "\"Transition\"",
+								"x": "87",
+								"y": "68",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeUp",
+							"sid": 487658649224741,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "-90",
+								"y": "-120",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 129885426141268,
+							"parameters": {
+								"object-to-create": "FadeDown",
+								"layer": "\"Transition\"",
+								"x": "228",
+								"y": "231",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeDown",
+							"sid": 390224806752904,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "430",
+								"y": "395",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 344718343449983,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "FadeDown",
+							"sid": 301485596168077
+						},
+						{
+							"id": "destroy",
+							"objectClass": "FadeUp",
+							"sid": 403445911148296
+						}
+					],
+					"sid": 412638689292850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 386416414380765,
+							"parameters": {
+								"variable": "FXType",
+								"comparison": 0,
+								"value": "\"FadeOut\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 611851663957823,
+							"parameters": {
+								"object-to-create": "FadeUp",
+								"layer": "\"Transition\"",
+								"x": "-90",
+								"y": "-120",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeUp",
+							"sid": 996426416509175,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "87",
+								"y": "68",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 298417623417767,
+							"parameters": {
+								"object-to-create": "FadeDown",
+								"layer": "\"Transition\"",
+								"x": "430",
+								"y": "395",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "FadeDown",
+							"sid": 490129619253858,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "228",
+								"y": "231",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 224964948574178,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 282320489893003,
+							"parameters": {
+								"tag": "\"GameMusic\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 881696571806552,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 588306732548742,
+							"parameters": {
+								"layout": "TargetLayout"
+							}
+						}
+					],
+					"sid": 304581582981311
+				}
+			]
+		},
+		{
+			"functionName": "StyledTransition",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "FXType",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 431397465029508
+				},
+				{
+					"name": "TargetLayout",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 885499544646214
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 881003681276789,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 739083469530405,
+							"parameters": {
+								"variable": "FXType",
+								"comparison": 0,
+								"value": "\"Close\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 359034034758672,
+							"parameters": {
+								"object-to-create": "StyledTransition",
+								"layer": "\"Transition\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "StyledTransition",
+							"sid": 453517465883616,
+							"parameters": {
+								"animation": "\"Closing\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 810102919230741,
+							"parameters": {
+								"audio-file": "SFX_TransitionClose",
+								"loop": "not-looping",
+								"volume": "SFXVolume",
+								"stereo-pan": "0",
+								"tag-optional": "\"GameSFX\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 842153727736570,
+							"parameters": {
+								"tag": "\"StyledFinished\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "StyledTransition",
+							"sid": 521459200289820,
+							"parameters": {
+								"animation": "\"Loop\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 639277526501105,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 417403883588892,
+							"parameters": {
+								"tag": "\"GameMusic\""
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 526768236096039,
+							"parameters": {
+								"layout": "TargetLayout"
+							}
+						}
+					],
+					"sid": 898157778883529
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 767198236343829,
+							"parameters": {
+								"variable": "FXType",
+								"comparison": 0,
+								"value": "\"Open\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 440146137636350,
+							"parameters": {
+								"audio-file": "SFX_TransitionOpen",
+								"loop": "not-looping",
+								"volume": "SFXVolume",
+								"stereo-pan": "0",
+								"tag-optional": "\"GameSFX\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 567317268920253,
+							"parameters": {
+								"object-to-create": "StyledTransition",
+								"layer": "\"Transition\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "StyledTransition",
+							"sid": 778242212616383,
+							"parameters": {
+								"animation": "\"Opening\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 241881295336892,
+							"parameters": {
+								"tag": "\"StyledFinished\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "StyledTransition",
+							"sid": 131376964434545
+						}
+					],
+					"sid": 673233411650874
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "StyledTransition",
+					"sid": 855602334154435,
+					"parameters": {
+						"animation": "\"Closing\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 618791170882350,
+					"parameters": {
+						"tag": "\"StyledFinished\""
+					}
+				}
+			],
+			"sid": 275519163891268
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "StyledTransition",
+					"sid": 417106269112850,
+					"parameters": {
+						"animation": "\"Opening\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 443838851529078,
+					"parameters": {
+						"tag": "\"StyledFinished\""
+					}
+				}
+			],
+			"sid": 713442954217050
+		}
+	],
+	"sid": 814320252294264
+}

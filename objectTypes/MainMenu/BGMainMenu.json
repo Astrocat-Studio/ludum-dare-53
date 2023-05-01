@@ -4,7 +4,13 @@
 	"sid": 403173850972663,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 631879717025227
+		}
+	],
 	"effectTypes": [
 		{
 			"effectId": "blurhorizontal",
@@ -23,7 +29,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6551120,
+						"imageSpriteId": 1396597,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -50,6 +56,29 @@
 				],
 				"sid": 583516393221195,
 				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8301568,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 543265991562145,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

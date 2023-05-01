@@ -6,6 +6,18 @@
 			"includeSheet": "@GlobalVariables"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "@Enemys"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "@Player"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "@GlobalFunctions"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -50,22 +62,19 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 338760744330311,
-					"parameters": {
-						"audio-file": "1_LevelMusic",
-						"loop": "looping",
-						"volume": "MusicVolume",
-						"stereo-pan": "0",
-						"tag-optional": "\"GameMusic\""
-					}
-				},
-				{
 					"callFunction": "Transition",
 					"sid": 536797895396489,
+					"disabled": true,
 					"parameters": [
 						"\"FadeIn\"",
+						"\"\""
+					]
+				},
+				{
+					"callFunction": "StyledTransition",
+					"sid": 216839252055831,
+					"parameters": [
+						"\"Open\"",
 						"\"\""
 					]
 				},
@@ -77,6 +86,28 @@
 					"parameters": {
 						"x": "lerp(GameCamera.X, Player.X, 2 * dt)",
 						"y": "lerp(GameCamera.Y, Player.Y, 2 * dt)"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 955969528278030,
+					"parameters": {
+						"tag": "\"GunsJson\"",
+						"file": "GunsArray.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 617855740853391
+				},
+				{
+					"id": "load",
+					"objectClass": "GunsArray",
+					"sid": 261570544610829,
+					"parameters": {
+						"json": "AJAX.LastData"
 					}
 				}
 			],
@@ -128,6 +159,145 @@
 						}
 					],
 					"sid": 176131188595693
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 770100224952029,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 343542893499891,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 900877670915393,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 463025511030944,
+									"parameters": {
+										"audio-file": "1_LevelMusic1",
+										"loop": "looping",
+										"volume": "MusicVolume",
+										"stereo-pan": "0",
+										"tag-optional": "\"GameMusic\""
+									}
+								}
+							],
+							"sid": 818410642091159,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 332020130321781,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 790638783324148,
+									"parameters": {
+										"audio-file": "1_LevelMusic2",
+										"loop": "looping",
+										"volume": "MusicVolume",
+										"stereo-pan": "0",
+										"tag-optional": "\"GameMusic\""
+									}
+								}
+							],
+							"sid": 753340436844274
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 511347902756033,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 197540125688081,
+									"parameters": {
+										"audio-file": "1_LevelMusic3",
+										"loop": "looping",
+										"volume": "MusicVolume",
+										"stereo-pan": "0",
+										"tag-optional": "\"GameMusic\""
+									}
+								}
+							],
+							"sid": 104462991643321
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 733239055364015,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 612690189995909,
+									"parameters": {
+										"audio-file": "1_LevelMusic4",
+										"loop": "looping",
+										"volume": "MusicVolume",
+										"stereo-pan": "0",
+										"tag-optional": "\"GameMusic\""
+									}
+								}
+							],
+							"sid": 215332989009111
+						}
+					]
 				}
 			]
 		},
@@ -159,2603 +329,143 @@
 					}
 				}
 			],
-			"sid": 152203521538341
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Player",
-			"description": "",
-			"isActiveOnStart": true,
+			"sid": 152203521538341,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "CollectCollision",
-							"sid": 656250308851385,
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 106175192225452,
 							"parameters": {
-								"object": "DemonEssence"
+								"instance-variable": "Gun",
+								"comparison": 0,
+								"value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 698948510834553,
+							"id": "set-text",
+							"objectClass": "AmmoText",
+							"sid": 971374645780224,
 							"parameters": {
-								"variable": "DemonEssence",
+								"text": "GunUI.PistolAmmoInMagazine"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "AmmoText2",
+							"sid": 926865780089859,
+							"parameters": {
+								"text": "GunUI.TotalAmmoPistol"
+							}
+						}
+					],
+					"sid": 271700257006438
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 465712222530838,
+							"parameters": {
+								"instance-variable": "Gun",
+								"comparison": 0,
 								"value": "1"
 							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "DemonEssence",
-							"sid": 324491341299392
 						}
 					],
-					"sid": 553279895787430
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "AmmoText",
+							"sid": 428927519345649,
+							"parameters": {
+								"text": "GunUI.ShotgunAmmoInMagazine"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "AmmoText2",
+							"sid": 633655653379444,
+							"parameters": {
+								"text": "GunUI.TotalAmmoShotgun"
+							}
+						}
+					],
+					"sid": 564506378569707
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-created",
+							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 327589081477631
+							"sid": 880456633975008,
+							"parameters": {
+								"instance-variable": "Gun",
+								"comparison": 0,
+								"value": "2"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 693007396162242,
+							"id": "set-text",
+							"objectClass": "AmmoText",
+							"sid": 957268449993333,
 							"parameters": {
-								"object-to-create": "CollectCollision",
-								"layer": "\"Player\"",
-								"x": "Player.X",
-								"y": "Player.Y",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"text": "GunUI.RifleAmmoInMagazine"
 							}
 						},
 						{
-							"id": "pin-to-object-properties",
-							"objectClass": "CollectCollision",
-							"sid": 229570398532630,
-							"behaviorType": "Pin",
+							"id": "set-text",
+							"objectClass": "AmmoText2",
+							"sid": 308940248020435,
 							"parameters": {
-								"pin-to": "Player",
-								"x": true,
-								"y": true,
-								"angle": false,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
+								"text": "GunUI.TotalAmmoRifle"
 							}
 						}
 					],
-					"sid": 136396711097645
+					"sid": 524024613735160
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-moving",
+							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 364322803670036,
-							"behaviorType": "8Direction"
-						}
-					],
-					"actions": [],
-					"sid": 721197022206753,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "Player",
-									"sid": 493249548448160,
-									"parameters": {
-										"comparison": 0,
-										"number": "1"
-									}
-								},
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "Player",
-									"sid": 636581956460963,
-									"parameters": {
-										"comparison": 0,
-										"number": "3"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 261308015925232,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 296473334175424
-										}
-									],
-									"actions": [
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 607529303877618,
-											"parameters": {
-												"audio-file": "LD53_sfx_player-step",
-												"loop": "not-looping",
-												"volume": "SFXVolume",
-												"stereo-pan": "0",
-												"tag-optional": "\"GameSFX\""
-											}
-										}
-									],
-									"sid": 725898544378004
-								}
-							],
-							"isOrBlock": true
-						}
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Projectiles",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-created",
-									"objectClass": "Ammo",
-									"sid": 369634550089988
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 722187933821820,
-									"parameters": {
-										"object-to-create": "GunLightSpots",
-										"layer": "\"FX\"",
-										"x": "Ammo.X",
-										"y": "Ammo.Y",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "GunLightSpots",
-									"sid": 637112263228454,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "Ammo",
-										"x": true,
-										"y": true,
-										"angle": false,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								}
-							],
-							"sid": 361785693837477
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-animation-finished",
-									"objectClass": "GunShoot",
-									"sid": 782210953592921
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "GunShoot",
-									"sid": 947969648700115
-								}
-							],
-							"sid": 296988835439862
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "Ammo",
-									"sid": 940312366117150,
-									"parameters": {
-										"object": "CollisionMap"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 711804139248281,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Ammo",
-											"sid": 443252020789891,
-											"parameters": {
-												"object": "GunLightSpots"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "GunLightSpots",
-											"sid": 307432876934203
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Ammo",
-											"sid": 149147925955413
-										}
-									],
-									"sid": 654196320884453
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "Ammo",
-									"sid": 543573802646671,
-									"parameters": {
-										"object": "Enemy"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 972810395385893,
-									"parameters": {
-										"instance-variable": "StateMachine",
-										"comparison": 0,
-										"value": "\"Spawning\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 837712204885814,
-									"parameters": {
-										"audio-file": "LD53_sfx_bullet-impact",
-										"loop": "not-looping",
-										"volume": "SFXVolume",
-										"stereo-pan": "0",
-										"tag-optional": "\"GameSFX\""
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Enemy",
-									"sid": 252231860341890,
-									"parameters": {
-										"animation": "\"Exploding\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "stop",
-									"objectClass": "Enemy",
-									"sid": 252925148352947,
-									"behaviorType": "MoveTo2"
-								},
-								{
-									"id": "shake",
-									"objectClass": "GameCamera",
-									"sid": 702755339920753,
-									"behaviorType": "ScrollTo",
-									"parameters": {
-										"magnitude": "2",
-										"duration": "0.4",
-										"mode": "reducing-magnitude"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 635262002392657,
-									"parameters": {
-										"instance-variable": "StateMachine",
-										"value": "\"Exploding\""
-									}
-								}
-							],
-							"sid": 886593790315355,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Ammo",
-											"sid": 745269440567524,
-											"parameters": {
-												"object": "GunLightSpots"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "GunLightSpots",
-											"sid": 437821264792925
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Ammo",
-											"sid": 476715395856277
-										}
-									],
-									"sid": 540658924391470
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-animation-finished",
-									"objectClass": "Enemy",
-									"sid": 656903766469598,
-									"parameters": {
-										"animation": "\"Exploding\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Enemy",
-									"sid": 149791658143943,
-									"parameters": {
-										"object": "DemonEssence",
-										"layer": "\"Instances\"",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Enemy",
-									"sid": 654873912875657
-								}
-							],
-							"sid": 600740179391892
-						}
-					],
-					"sid": 921180496478475
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 145052083375243,
+							"sid": 839859015493924,
 							"parameters": {
-								"instance-variable": "Direction",
-								"value": "floor(angle(Player.X, Player.Y, Mouse.X, Mouse.Y)/ 45)"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "PlayerGuns",
-							"sid": 375659685555680,
-							"parameters": {
-								"object": "Player",
-								"image-point-optional": "1"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "PlayerGuns",
-							"sid": 517364762281509,
-							"parameters": {
-								"angle": "angle(Self.X,Self.Y,Mouse.X,Mouse.Y)"
-							}
-						}
-					],
-					"sid": 952500879627067,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 826792009745874,
-									"parameters": {
-										"instance-variable": "State_Machine",
-										"comparison": 0,
-										"value": "\"Dying\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 831863337088093,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-moving",
-											"objectClass": "Player",
-											"sid": 678726191306854,
-											"behaviorType": "8Direction"
-										}
-									],
-									"actions": [],
-									"sid": 619971191752659,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Direita"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 377142800637413,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "0"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 982812688405541,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 915882545910961,
-													"parameters": {
-														"animation": "\"WalkSide\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 707928825474084,
-													"parameters": {
-														"state": "mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 804764641078219,
-													"parameters": {
-														"state": "not-flipped"
-													}
-												}
-											],
-											"sid": 297450562702178,
-											"isOrBlock": true
-										},
-										{
-											"eventType": "comment",
-											"text": "Baixo / Dir"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 413374832217458,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 197726005489711,
-													"parameters": {
-														"animation": "\"WalkFront\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 881689108062867,
-													"parameters": {
-														"state": "mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 285967580477568,
-													"parameters": {
-														"state": "not-flipped"
-													}
-												}
-											],
-											"sid": 834645968439647
-										},
-										{
-											"eventType": "comment",
-											"text": "Baixo / Esq"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 704778689162726,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 218654225623541,
-													"parameters": {
-														"animation": "\"WalkFront\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 736931101804065,
-													"parameters": {
-														"state": "not-mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 730919496246870,
-													"parameters": {
-														"state": "flipped"
-													}
-												}
-											],
-											"sid": 789728580020391
-										},
-										{
-											"eventType": "comment",
-											"text": "Esquerda"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 328948701157269,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-4"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 417434657208578,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "3"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 234700040533507,
-													"parameters": {
-														"animation": "\"WalkSide\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 112713610654096,
-													"parameters": {
-														"state": "not-mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 669463109137495,
-													"parameters": {
-														"state": "flipped"
-													}
-												}
-											],
-											"sid": 722237502822478,
-											"isOrBlock": true
-										},
-										{
-											"eventType": "comment",
-											"text": "Cima / Esq"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 631393780252865,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-3"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 932921600384711,
-													"parameters": {
-														"animation": "\"WalkBack\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 293601658778816,
-													"parameters": {
-														"state": "not-mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 398726313820250,
-													"parameters": {
-														"state": "not-flipped"
-													}
-												}
-											],
-											"sid": 531142269811844
-										},
-										{
-											"eventType": "comment",
-											"text": "Cima / Dir"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 172671263364004,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 289382340418739,
-													"parameters": {
-														"animation": "\"WalkBack\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 383088667643826,
-													"parameters": {
-														"state": "mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 301848911419022,
-													"parameters": {
-														"state": "flipped"
-													}
-												}
-											],
-											"sid": 830810023861624
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-moving",
-											"objectClass": "Player",
-											"sid": 985093672211154,
-											"behaviorType": "8Direction",
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 857918116575548,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Direita"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 777040999085142,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "0"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 341824039943252,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 658081760801943,
-													"parameters": {
-														"animation": "\"IdleSide\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 108006411058335,
-													"parameters": {
-														"state": "mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 393772477124089,
-													"parameters": {
-														"state": "not-flipped"
-													}
-												}
-											],
-											"sid": 590807554421893,
-											"isOrBlock": true
-										},
-										{
-											"eventType": "comment",
-											"text": "Baixo / Dir"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 915426094717867,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 910654231633780,
-													"parameters": {
-														"animation": "\"IdleFront\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 888686064092608,
-													"parameters": {
-														"state": "mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 865283454667705,
-													"parameters": {
-														"state": "not-flipped"
-													}
-												}
-											],
-											"sid": 319871222460858
-										},
-										{
-											"eventType": "comment",
-											"text": "Baixo / Esq"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 725062810331176,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 158785047737472,
-													"parameters": {
-														"animation": "\"IdleFront\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 316696312335160,
-													"parameters": {
-														"state": "not-mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 409497079847811,
-													"parameters": {
-														"state": "flipped"
-													}
-												}
-											],
-											"sid": 617567705266377
-										},
-										{
-											"eventType": "comment",
-											"text": "Esquerda"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 420972450062503,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-4"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 647604357464252,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "3"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 871723159419857,
-													"parameters": {
-														"animation": "\"IdleSide\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 571751107242532,
-													"parameters": {
-														"state": "not-mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 547693159111306,
-													"parameters": {
-														"state": "flipped"
-													}
-												}
-											],
-											"sid": 652749444240601,
-											"isOrBlock": true
-										},
-										{
-											"eventType": "comment",
-											"text": "Cima / Esq"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 779371617537871,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-3"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 138881555877258,
-													"parameters": {
-														"animation": "\"IdleBack\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 109595248756443,
-													"parameters": {
-														"state": "mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 862379070442846,
-													"parameters": {
-														"state": "not-flipped"
-													}
-												}
-											],
-											"sid": 701465444117698
-										},
-										{
-											"eventType": "comment",
-											"text": "Cima / Dir"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 495141433093101,
-													"parameters": {
-														"instance-variable": "Direction",
-														"comparison": 0,
-														"value": "-2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 905958786354804,
-													"parameters": {
-														"animation": "\"IdleBack\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-mirrored",
-													"objectClass": "Player",
-													"sid": 897936005100770,
-													"parameters": {
-														"state": "not-mirrored"
-													}
-												},
-												{
-													"id": "set-flipped",
-													"objectClass": "PlayerGuns",
-													"sid": 609681725842399,
-													"parameters": {
-														"state": "flipped"
-													}
-												}
-											],
-											"sid": 346168992867344
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 408073311340049,
-											"parameters": {
-												"key": 68
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 956259839285586,
-											"parameters": {
-												"key": 39
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 491712517684057,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "right"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "Player",
-											"sid": 584391704315760,
-											"parameters": {
-												"state": "mirrored"
-											}
-										}
-									],
-									"sid": 362908286540635,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 760656218874302,
-											"parameters": {
-												"key": 65
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 608112390184521,
-											"parameters": {
-												"key": 37
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 735796724568414,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "left"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "Player",
-											"sid": 393506070083661,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										}
-									],
-									"sid": 786903722284463,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 453909703397258,
-											"parameters": {
-												"key": 83
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 563583551118641,
-											"parameters": {
-												"key": 40
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 613060911950973,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "down"
-											}
-										}
-									],
-									"sid": 976792841154816,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 857404977378458,
-											"parameters": {
-												"key": 87
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 624230102980163,
-											"parameters": {
-												"key": 38
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 905702428735479,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "up"
-											}
-										}
-									],
-									"sid": 340838761672288,
-									"isOrBlock": true
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 408361183420988,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player",
-							"sid": 743675588445953,
-							"parameters": {
-								"instance-variable": "ShootCooldown"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [],
-					"sid": 933162370909562,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 387726065566088,
-									"parameters": {
-										"instance-variable": "Gun",
-										"comparison": 0,
-										"value": "\"Pistol\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 774175124368886,
-									"parameters": {
-										"audio-file": "LD53_sfx_pistol-shoot",
-										"loop": "not-looping",
-										"volume": "SFXVolume",
-										"stereo-pan": "0",
-										"tag-optional": "\"GameSFX\""
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Player",
-									"sid": 107904590826084,
-									"parameters": {
-										"instance-variable": "ShootCooldown",
-										"value": "true"
-									}
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "PlayerGuns",
-									"sid": 577008687533219,
-									"parameters": {
-										"object": "Ammo",
-										"layer": "\"Projectiles\"",
-										"image-point": "1",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "PlayerGuns",
-									"sid": 575687405034620,
-									"parameters": {
-										"object": "GunShoot",
-										"layer": "\"Projectiles\"",
-										"image-point": "1",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "Ammo",
-									"sid": 623392053595512,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "angle(Self.X,Self.Y,Mouse.X,Mouse.Y)"
-									}
-								},
-								{
-									"id": "shake",
-									"objectClass": "GameCamera",
-									"sid": 941505790204159,
-									"disabled": true,
-									"behaviorType": "ScrollTo",
-									"parameters": {
-										"magnitude": "0.5",
-										"duration": "0.4",
-										"mode": "reducing-magnitude"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 214737783722948,
-									"parameters": {
-										"seconds": "0.6"
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Player",
-									"sid": 838362600679771,
-									"parameters": {
-										"instance-variable": "ShootCooldown",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 874652521845106
-						}
-					]
-				}
-			],
-			"sid": 324375337497452
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Enemys",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-created",
-							"objectClass": "Enemy",
-							"sid": 406951632561173
-						},
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 979360675637955,
-							"parameters": {
-								"object": "Enemy"
+								"instance-variable": "Gun",
+								"comparison": 0,
+								"value": "3"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 701524634195907,
+							"id": "set-text",
+							"objectClass": "AmmoText",
+							"sid": 264693424827924,
 							"parameters": {
-								"animation": "\"Spawning\"",
-								"from": "beginning"
+								"text": "GunUI.RPGAmmoInMagazine"
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 171746627560739,
+							"id": "set-text",
+							"objectClass": "AmmoText2",
+							"sid": 539340464464058,
 							"parameters": {
-								"instance-variable": "StateMachine",
-								"value": "\"Spawning\""
+								"text": "GunUI.TotalAmmoRPG"
 							}
 						}
 					],
-					"sid": 629177386714817
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-animation-finished",
-							"objectClass": "Enemy",
-							"sid": 856273444106021,
-							"parameters": {
-								"animation": "\"Spawning\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 662677544998777,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"value": "\"Walking\""
-							}
-						}
-					],
-					"sid": 752377110962770
-				},
-				{
-					"eventType": "comment",
-					"text": "Ajustador de direção da Sprite"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 798929450980805,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"comparison": 0,
-								"value": "\"Walking\""
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Enemy",
-							"sid": 730386218928101,
-							"parameters": {
-								"instance-variable": "SkillActived"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "move-to-object",
-							"objectClass": "Enemy",
-							"sid": 355430308227969,
-							"behaviorType": "MoveTo2",
-							"parameters": {
-								"object": "Player",
-								"image-point": "0",
-								"mode": "direct"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 328664123627371,
-							"parameters": {
-								"animation": "\"Walking\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 415876750103508,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Enemy",
-									"sid": 240024080567683,
-									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "Player.X"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mirrored",
-									"objectClass": "Enemy",
-									"sid": 631141142727230,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								}
-							],
-							"sid": 531193933877131
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Enemy",
-									"sid": 760465123289089,
-									"parameters": {
-										"comparison": 5,
-										"x-co-ordinate": "Player.X"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mirrored",
-									"objectClass": "Enemy",
-									"sid": 511129060090809,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 171350884785019
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 264941669782827,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"comparison": 0,
-								"value": "\"Spawning\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 720501360200616,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"comparison": 0,
-								"value": "\"ChannelingAbility\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 430285646446876,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"comparison": 0,
-								"value": "\"Cooldown\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 444478080766615,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"comparison": 0,
-								"value": "\"Exploding\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 742782578272786,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"comparison": 0,
-								"value": "\"Atacking\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 820181890531519,
-							"parameters": {
-								"instance-variable": "StateMachine",
-								"value": "\"Walking\""
-							}
-						}
-					],
-					"sid": 939036537019691
-				},
-				{
-					"eventType": "comment",
-					"text": "Enemy Spawn"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 958975543834921,
-							"parameters": {
-								"interval-seconds": "SpawnCooldown"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 792866490356497,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 339630570734335,
-									"parameters": {
-										"count": "NextSpawnNumber"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object-by-name",
-									"objectClass": "System",
-									"sid": 653226953135448,
-									"parameters": {
-										"object-name": "\"Enemy\"&choose(1,2,3)",
-										"layer": "\"Enemys\"",
-										"x": "random(80,346)",
-										"y": "random(105,306)",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 218107430605620,
-									"parameters": {
-										"variable": "NextSpawnNumber",
-										"value": "choose(1,2,3,4,5,6)"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 930074757947348,
-									"parameters": {
-										"variable": "SpawnCooldown",
-										"value": "choose(3,4,5)"
-									}
-								}
-							],
-							"sid": 513961259091827
-						}
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Enemy1",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-los-to-object",
-									"objectClass": "Enemy1",
-									"sid": 958031122871587,
-									"behaviorType": "LineOfSight",
-									"parameters": {
-										"object": "Player",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "Enemy1",
-									"sid": 400072643574972,
-									"parameters": {
-										"animation": "\"Spawning\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Enemy1",
-									"sid": 714936049906410,
-									"parameters": {
-										"instance-variable": "SkillActived"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 454799185392071,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "PlayerX",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 701180455388183
-								},
-								{
-									"eventType": "variable",
-									"name": "PlayerY",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 985568219339454
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 666786913685512,
-											"parameters": {
-												"variable": "PlayerX",
-												"value": "Player.X"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 610263088626168,
-											"parameters": {
-												"variable": "PlayerY",
-												"value": "Player.Y"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Enemy1",
-											"sid": 983037260628370,
-											"parameters": {
-												"instance-variable": "SkillActived",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy1",
-											"sid": 332893699187938,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"ChannelingAbility\""
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Enemy1",
-											"sid": 845789379256228,
-											"behaviorType": "MoveTo2"
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Enemy1",
-											"sid": 131846127749336,
-											"parameters": {
-												"animation": "\"Atack1\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 138052511967268,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy1",
-											"sid": 532210229418115,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"Atacking\""
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Enemy1",
-											"sid": 502999189348989,
-											"parameters": {
-												"animation": "\"Atack2\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Enemy1",
-											"sid": 392972881201232,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"id": "set-angle-of-motion",
-											"objectClass": "Enemy1",
-											"sid": 693062500645561,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"angle": "angle(Self.X, Self.Y, PlayerX, PlayerY)"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 935064792783785,
-											"parameters": {
-												"seconds": "0.35"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy1",
-											"sid": 768454653594926,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"Cooldown\""
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Enemy1",
-											"sid": 887407960547393,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Enemy1",
-											"sid": 557668480989615,
-											"parameters": {
-												"animation": "\"Atack3\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 586160394071481,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Enemy1",
-											"sid": 841182072505413,
-											"parameters": {
-												"instance-variable": "SkillActived",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy1",
-											"sid": 498405045431823,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"\"\n"
-											}
-										}
-									],
-									"sid": 173543939670393
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 829398472550354,
-									"parameters": {
-										"instance-variable": "State_Machine",
-										"comparison": 0,
-										"value": "\"Dying\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "Enemy1",
-									"sid": 810912499343163,
-									"parameters": {
-										"animation": "\"Atack2\""
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Enemy1",
-									"sid": 849235997036209,
-									"parameters": {
-										"object": "Player"
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 910824638695594
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "PlayerDeath",
-									"sid": 841558787548184
-								}
-							],
-							"sid": 447702036623960
-						}
-					],
-					"sid": 954926892038203
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Enemy2",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-los-to-object",
-									"objectClass": "Enemy2",
-									"sid": 239430873301388,
-									"behaviorType": "LineOfSight",
-									"parameters": {
-										"object": "Player",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "Enemy2",
-									"sid": 124689578647808,
-									"parameters": {
-										"animation": "\"Spawning\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Enemy2",
-									"sid": 177377238164229,
-									"parameters": {
-										"instance-variable": "SkillActived"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 828729425007021,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "PlayerX",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 470054768191712
-								},
-								{
-									"eventType": "variable",
-									"name": "PlayerY",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 669278217202111
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Enemy2",
-											"sid": 345100834156540,
-											"parameters": {
-												"instance-variable": "SkillActived",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy2",
-											"sid": 421269641864212,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"Atacking\""
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Enemy2",
-											"sid": 839374640588785,
-											"behaviorType": "MoveTo2"
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 381954725559519,
-											"parameters": {
-												"seconds": "0.5"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Enemy2",
-											"sid": 519845308611763,
-											"parameters": {
-												"animation": "\"Atack\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 932579212579739,
-											"parameters": {
-												"seconds": "0.5"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy2",
-											"sid": 416514603376384,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"\""
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Enemy2",
-											"sid": 723761453306439,
-											"parameters": {
-												"instance-variable": "SkillActived",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 978324153644306
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 282087697054928,
-									"parameters": {
-										"instance-variable": "State_Machine",
-										"comparison": 0,
-										"value": "\"Dying\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "Enemy2",
-									"sid": 311585772558916,
-									"parameters": {
-										"animation": "\"Atack\""
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Enemy2",
-									"sid": 952050751774584,
-									"parameters": {
-										"object": "Player"
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 387886580751891
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "PlayerDeath",
-									"sid": 331093054207451
-								}
-							],
-							"sid": 575024539319095
-						}
-					],
-					"sid": 582432508235477
-				}
-			],
-			"sid": 975374721683183
-		},
-		{
-			"functionName": "Transition",
-			"functionCopyPicked": false,
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "FXType",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 392639055935271
-				},
-				{
-					"name": "TargetLayout",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 101570619792410
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 405857039983893,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 855799102599760,
-							"parameters": {
-								"variable": "FXType",
-								"comparison": 0,
-								"value": "\"FadeIn\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 534991793976180,
-							"parameters": {
-								"object-to-create": "FadeUp",
-								"layer": "\"Transition\"",
-								"x": "87",
-								"y": "68",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "move-to-position",
-							"objectClass": "FadeUp",
-							"sid": 164919187226149,
-							"behaviorType": "MoveTo",
-							"parameters": {
-								"x": "-90",
-								"y": "-120",
-								"mode": "direct"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 198056389683856,
-							"parameters": {
-								"object-to-create": "FadeDown",
-								"layer": "\"Transition\"",
-								"x": "228",
-								"y": "231",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "move-to-position",
-							"objectClass": "FadeDown",
-							"sid": 712714127875795,
-							"behaviorType": "MoveTo",
-							"parameters": {
-								"x": "430",
-								"y": "395",
-								"mode": "direct"
-							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 769609090273848,
-							"parameters": {
-								"tag": "\"GameMusic\""
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 417562531591973,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"id": "go-to-layout-by-name",
-							"objectClass": "System",
-							"sid": 302428925812214,
-							"parameters": {
-								"layout": "TargetLayout"
-							}
-						}
-					],
-					"sid": 153792471066319
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 908033195528697,
-							"parameters": {
-								"variable": "FXType",
-								"comparison": 0,
-								"value": "\"FadeOut\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 464793182390016,
-							"parameters": {
-								"object-to-create": "FadeUp",
-								"layer": "\"Transition\"",
-								"x": "-90",
-								"y": "-120",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "move-to-position",
-							"objectClass": "FadeUp",
-							"sid": 130904470069333,
-							"behaviorType": "MoveTo",
-							"parameters": {
-								"x": "87",
-								"y": "68",
-								"mode": "direct"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 520076977326002,
-							"parameters": {
-								"object-to-create": "FadeDown",
-								"layer": "\"Transition\"",
-								"x": "430",
-								"y": "395",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "move-to-position",
-							"objectClass": "FadeDown",
-							"sid": 236672432374802,
-							"behaviorType": "MoveTo",
-							"parameters": {
-								"x": "228",
-								"y": "231",
-								"mode": "direct"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 424749794672938,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 806846737401754,
-							"parameters": {
-								"tag": "\"GameMusic\""
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 487300093659760,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"id": "go-to-layout-by-name",
-							"objectClass": "System",
-							"sid": 871962070017649,
-							"parameters": {
-								"layout": "TargetLayout"
-							}
-						}
-					],
-					"sid": 831009552290192
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 465936947145069,
-					"parameters": {
-						"key": 90
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Transition",
-					"sid": 725018602250512,
-					"parameters": [
-						"\"FadeOut\"",
-						"\"MainMenu\""
-					]
-				}
-			],
-			"sid": 325217905337876
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "DemonEssence",
-					"sid": 632242479014287
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 565161213935887,
-					"parameters": {
-						"seconds": "5"
-					}
-				},
-				{
-					"id": "flash",
-					"objectClass": "DemonEssence",
-					"sid": 233425351380436,
-					"behaviorType": "Flash",
-					"parameters": {
-						"on-time": "0.25",
-						"off-time": "0.25",
-						"duration": "2"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 412828708120438,
-					"parameters": {
-						"seconds": "2"
-					}
-				},
-				{
-					"id": "flash",
-					"objectClass": "DemonEssence",
-					"sid": 299594319397132,
-					"behaviorType": "Flash",
-					"parameters": {
-						"on-time": "0.15",
-						"off-time": "0.15",
-						"duration": "2"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 964085854741108,
-					"parameters": {
-						"seconds": "2"
-					}
-				},
-				{
-					"id": "flash",
-					"objectClass": "DemonEssence",
-					"sid": 855617023902080,
-					"behaviorType": "Flash",
-					"parameters": {
-						"on-time": "0.05",
-						"off-time": "0.05",
-						"duration": "2"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 505241698584161,
-					"parameters": {
-						"seconds": "2"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "DemonEssence",
-					"sid": 511286564114638
-				}
-			],
-			"sid": 114471826537132
-		},
-		{
-			"functionName": "PlayerDeath",
-			"functionCopyPicked": false,
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 961657001113433,
-					"parameters": {
-						"time-scale": "0.8"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player",
-					"sid": 426107682475652,
-					"parameters": {
-						"instance-variable": "State_Machine",
-						"value": "\"Dying\""
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "PlayerGuns",
-					"sid": 553293453634005
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player",
-					"sid": 736239250679494,
-					"parameters": {
-						"animation": "\"Dying\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "shake",
-					"objectClass": "GameCamera",
-					"sid": 105001301680642,
-					"behaviorType": "ScrollTo",
-					"parameters": {
-						"magnitude": "6",
-						"duration": "0.4",
-						"mode": "reducing-magnitude"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 399170954522033,
-					"parameters": {
-						"seconds": "1"
-					}
-				},
-				{
-					"callFunction": "EndGameVerify",
-					"sid": 977167700009521
-				}
-			],
-			"sid": 554836932341694
-		},
-		{
-			"functionName": "EndGameVerify",
-			"functionCopyPicked": false,
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 960446545910700,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 158227961877651,
-							"parameters": {
-								"variable": "Phase",
-								"comparison": 0,
-								"value": "4"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Transition",
-							"sid": 135745648542324,
-							"parameters": [
-								"\"FadeOut\"",
-								"\"Cutscene_3\""
-							]
-						}
-					],
-					"sid": 592720040758526
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 998667193235295
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Transition",
-							"sid": 800000376714431,
-							"parameters": [
-								"\"FadeOut\"",
-								"\"Cutscene_2\""
-							]
-						}
-					],
-					"sid": 628127974496359
+					"sid": 169383003826372
 				}
 			]
 		}

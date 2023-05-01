@@ -2,6 +2,124 @@
 	"name": "Cutscene_2",
 	"layers": [
 		{
+			"name": "BG",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 544861482011409,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.5372549019607843,
+				0.1843137254901961,
+				0.2196078431372549,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TiledBackground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 25,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": -1.4761182421287629,
+						"y": -457.3863740060815,
+						"width": 856.2678962770595,
+						"height": 748.554564715161,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.6352941176470588,
+							0.6274509803921569,
+							0.6274509803921569,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 377724637993327,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "Scenes",
 			"overriden": 0,
 			"subLayers": [
@@ -15,7 +133,7 @@
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Default",
-								"initial-frame": 10,
+								"initial-frame": 6,
 								"enable-collisions": true,
 								"live-preview": false
 							},
@@ -37,8 +155,8 @@
 							"world": {
 								"x": 163.12894378301047,
 								"y": 136.45001515280597,
-								"width": 349.1415167496047,
-								"height": 237.01773505919292,
+								"width": 890.2413176085538,
+								"height": 501.91990953711445,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -90,7 +208,7 @@
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Default",
-								"initial-frame": 9,
+								"initial-frame": 6,
 								"enable-collisions": true,
 								"live-preview": false
 							},
@@ -112,8 +230,8 @@
 							"world": {
 								"x": 133.4135287798426,
 								"y": 142.38178102027885,
-								"width": 517.7910207798059,
-								"height": 202.17172499128822,
+								"width": 1574.2814883566543,
+								"height": 887.5831828885824,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -165,7 +283,7 @@
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Default",
-								"initial-frame": 8,
+								"initial-frame": 6,
 								"enable-collisions": true,
 								"live-preview": false
 							},
@@ -187,8 +305,8 @@
 							"world": {
 								"x": 161.4355150818932,
 								"y": 146.25790328266655,
-								"width": 336.1640476582435,
-								"height": 267.4384319109723,
+								"width": 1929.551484316375,
+								"height": 1087.8851467564975,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -238,9 +356,9 @@
 						{
 							"type": "SceneFrames",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Default",
-								"initial-frame": 7,
+								"initial-frame": 8,
 								"enable-collisions": true,
 								"live-preview": false
 							},
@@ -260,10 +378,10 @@
 								}
 							},
 							"world": {
-								"x": 162,
-								"y": 144,
-								"width": 367.1951800969757,
-								"height": 181.84737661564228,
+								"x": 160.360294,
+								"y": 147.075544,
+								"width": 14.671906988714891,
+								"height": 20.986501602950334,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -323,7 +441,70 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Arma",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "CutsceneGun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -157.09649485338184,
+						"y": 363.7376181861936,
+						"width": 101.59195127056445,
+						"height": 70.0634146693548,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 369810372503475,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
@@ -354,9 +535,9 @@
 					"behaviors": {},
 					"world": {
 						"x": 161.99999919021874,
-						"y": 144.00001064673592,
+						"y": 142.78870373012825,
 						"width": 324.5817004388129,
-						"height": 182.57720649683225,
+						"height": 298.8626704911708,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -407,7 +588,7 @@
 				{
 					"type": "CutscenesTexts",
 					"properties": {
-						"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et purus risus. Sed ut ultricies libero, eget pharetra nisi. Mauris nec dolor suscipit, cursus ligula in, finibus est. Quisque ipsum orci, condimentum a rhoncus in, bibendum aliquam ligula. Nulla id pellentesque erat.",
+						"text": "Press any button to continue!",
 						"enable-bbcode": true,
 						"font": "Pixel-UniCode",
 						"size": 8,
@@ -423,16 +604,20 @@
 						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 58,
+					"uid": 92,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 3.3518515609242456,
-						"y": 239.5766878021455,
+						"x": 3.49997710226296,
+						"y": 256.8448296321702,
 						"width": 317.00005095660117,
 						"height": 42.82895295576759,
 						"originX": 0,
@@ -449,6 +634,39 @@
 				}
 			],
 			"sid": 333790944776561,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Transition",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 163955580310159,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,

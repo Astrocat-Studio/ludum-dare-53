@@ -260,7 +260,7 @@
 							"instanceVariables": {
 								"State_Machine": "Idle",
 								"Direction": 0,
-								"Gun": "Pistol",
+								"Gun": 0,
 								"ShootCooldown": false
 							},
 							"behaviors": {

@@ -435,8 +435,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 189.42274847074032,
-								"y": 55.6526976479321,
+								"x": 135.34104862265954,
+								"y": 57.120030589546694,
 								"width": 48.701443544782094,
 								"height": 48.701443544782094,
 								"originX": 0.5,
@@ -464,8 +464,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 230.8093568106121,
-								"y": 55.19914577571433,
+								"x": 285.20548514618173,
+								"y": 57.190526196476995,
 								"width": 48.701443544782094,
 								"height": 48.701443544782094,
 								"originX": 0.5,
@@ -878,7 +878,7 @@
 							"instanceVariables": {
 								"State_Machine": "Idle",
 								"Direction": 0,
-								"Gun": "Pistol",
+								"Gun": 0,
 								"ShootCooldown": false
 							},
 							"behaviors": {
@@ -1434,6 +1434,277 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "GunUI",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 77,
+					"instanceVariables": {
+						"PistolAmmoInMagazine": 10,
+						"RifleAmmoInMagazine": 24,
+						"RPGAmmoInMagazine": 4,
+						"ShotgunAmmoInMagazine": 2,
+						"ActualGun": "Pistol",
+						"TotalAmmoPistol": 99,
+						"TotalAmmoShotgun": 15,
+						"TotalAmmoRifle": 120,
+						"TotalAmmoRPG": 8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 162.00000317896618,
+						"y": 143.999995739455,
+						"width": 70,
+						"height": 32,
+						"originX": 0.5,
+						"originY": -3.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "AmmoText",
+					"properties": {
+						"text": "6",
+						"enable-bbcode": true,
+						"font": "Pixel-UniCode",
+						"size": 7,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 78,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 167.28297305358305,
+						"y": 265.01787120481816,
+						"width": 9.828944489375615,
+						"height": 9.954147974899243,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "AmmoUI",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 79,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 138,
+						"y": 258,
+						"width": 48.12512436135117,
+						"height": 4,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DebugText",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 80,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2.875882511013856,
+						"y": 2.37606257840595,
+						"width": 90.71936676578403,
+						"height": 17.263329459881582,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "AmmoText2",
+					"properties": {
+						"text": "99",
+						"enable-bbcode": true,
+						"font": "Pixel-UniCode",
+						"size": 7,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 82,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 168.33118624574993,
+						"y": 277.13260500197475,
+						"width": 32.21795668073209,
+						"height": 9.954147974899243,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "EssenceBag",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Static",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 86,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 32.000002048663134,
+						"y": 256.00001030569354,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "bag_contador",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 87,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 54,
+						"y": 261,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Pontuation",
 					"properties": {
 						"text": "0",
@@ -1460,12 +1731,70 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 135.87339576171183,
-						"y": -0.5228056564949597,
-						"width": 52.11900439966702,
+						"x": 44.06071091205767,
+						"y": 262.37310047010493,
+						"width": 17.761018509075612,
 						"height": 14.376603023551453,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PortraitUI",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 65,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 292.00001998378764,
+						"y": 256.00001159432014,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GunsUI",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 94,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 148.53467434252397,
+						"y": 274.8613026299041,
+						"width": 14,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

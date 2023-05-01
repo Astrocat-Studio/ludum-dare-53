@@ -54,7 +54,7 @@
 					"instanceVariables": {
 						"State_Machine": "Idle",
 						"Direction": 0,
-						"Gun": "Pistol",
+						"Gun": 0,
 						"ShootCooldown": false
 					},
 					"behaviors": {
@@ -637,6 +637,159 @@
 							1
 						],
 						"angle": 0.8472398143420121,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GunUI",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {
+						"PistolAmmoInMagazine": 10,
+						"RifleAmmoInMagazine": 2,
+						"RPGAmmoInMagazine": 24,
+						"ShotgunAmmoInMagazine": 4,
+						"ActualGun": "Pistol",
+						"TotalAmmoPistol": 99,
+						"TotalAmmoShotgun": 15,
+						"TotalAmmoRifle": 120,
+						"TotalAmmoRPG": 8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 271.4619581889472,
+						"y": 34.907765313542114,
+						"width": 70,
+						"height": 32,
+						"originX": 0.5,
+						"originY": -3.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StyledTransition",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Closing",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 93,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -211.33903941213453,
+						"y": 277.7211735864589,
+						"width": 324,
+						"height": 288,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RPGBullet",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 97,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 200,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 48.5551705387121,
+						"y": 8.36178658665488,
+						"width": 10.845776245480947,
+						"height": 10.845776245480947,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Explosion",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 98,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 25,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 39.892063596446036,
+						"y": 48.395745297693125,
+						"width": 30,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}

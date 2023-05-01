@@ -1,0 +1,856 @@
+{
+	"name": "@Enemys",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemys",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Enemy",
+							"sid": 406951632561173
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 979360675637955,
+							"parameters": {
+								"object": "Enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 442626656270179,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"value": "\"Spawning\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 701524634195907,
+							"parameters": {
+								"animation": "\"Spawning\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 629177386714817
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Enemy",
+							"sid": 856273444106021,
+							"parameters": {
+								"animation": "\"Spawning\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 662677544998777,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"value": "\"Walking\""
+							}
+						}
+					],
+					"sid": 752377110962770
+				},
+				{
+					"eventType": "comment",
+					"text": "Ajustador de direção da Sprite"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 798929450980805,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"comparison": 0,
+								"value": "\"Walking\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Enemy",
+							"sid": 730386218928101,
+							"parameters": {
+								"instance-variable": "SkillActived"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-object",
+							"objectClass": "Enemy",
+							"sid": 355430308227969,
+							"behaviorType": "MoveTo2",
+							"parameters": {
+								"object": "Player",
+								"image-point": "0",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 328664123627371,
+							"parameters": {
+								"animation": "\"Walking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 415876750103508,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Enemy",
+									"sid": 240024080567683,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Player.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Enemy",
+									"sid": 631141142727230,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 531193933877131
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Enemy",
+									"sid": 760465123289089,
+									"parameters": {
+										"comparison": 5,
+										"x-co-ordinate": "Player.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Enemy",
+									"sid": 511129060090809,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 171350884785019
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 264941669782827,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"comparison": 0,
+								"value": "\"Spawning\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 720501360200616,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"comparison": 0,
+								"value": "\"ChannelingAbility\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 430285646446876,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"comparison": 0,
+								"value": "\"Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 444478080766615,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"comparison": 0,
+								"value": "\"Exploding\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 742782578272786,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"comparison": 0,
+								"value": "\"Atacking\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 820181890531519,
+							"parameters": {
+								"instance-variable": "StateMachine",
+								"value": "\"Walking\""
+							}
+						}
+					],
+					"sid": 939036537019691
+				},
+				{
+					"eventType": "comment",
+					"text": "Enemy Spawn"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 958975543834921,
+							"parameters": {
+								"interval-seconds": "SpawnCooldown"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 792866490356497,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 339630570734335,
+									"parameters": {
+										"count": "NextSpawnNumber"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object-by-name",
+									"objectClass": "System",
+									"sid": 653226953135448,
+									"parameters": {
+										"object-name": "\"Enemy\"&choose(1,2,3)",
+										"layer": "\"Enemys\"",
+										"x": "random(80,346)",
+										"y": "random(105,306)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 218107430605620,
+									"parameters": {
+										"variable": "NextSpawnNumber",
+										"value": "choose(1,2,3,4,5,6)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 930074757947348,
+									"parameters": {
+										"variable": "SpawnCooldown",
+										"value": "choose(3,4,5)"
+									}
+								}
+							],
+							"sid": 513961259091827
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy1",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Enemy1",
+									"sid": 958031122871587,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy1",
+									"sid": 400072643574972,
+									"parameters": {
+										"animation": "\"Spawning\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Enemy1",
+									"sid": 714936049906410,
+									"parameters": {
+										"instance-variable": "SkillActived"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 454799185392071,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "PlayerX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 701180455388183
+								},
+								{
+									"eventType": "variable",
+									"name": "PlayerY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 985568219339454
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 666786913685512,
+											"parameters": {
+												"variable": "PlayerX",
+												"value": "Player.X"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 610263088626168,
+											"parameters": {
+												"variable": "PlayerY",
+												"value": "Player.Y"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy1",
+											"sid": 983037260628370,
+											"parameters": {
+												"instance-variable": "SkillActived",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Enemy1",
+											"sid": 332893699187938,
+											"parameters": {
+												"instance-variable": "StateMachine",
+												"value": "\"ChannelingAbility\""
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Enemy1",
+											"sid": 845789379256228,
+											"behaviorType": "MoveTo2"
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Enemy1",
+											"sid": 131846127749336,
+											"parameters": {
+												"animation": "\"Atack1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 138052511967268,
+											"parameters": {
+												"seconds": "1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Enemy1",
+											"sid": 532210229418115,
+											"parameters": {
+												"instance-variable": "StateMachine",
+												"value": "\"Atacking\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Enemy1",
+											"sid": 502999189348989,
+											"parameters": {
+												"animation": "\"Atack2\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Enemy1",
+											"sid": 392972881201232,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "Enemy1",
+											"sid": 693062500645561,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, PlayerX, PlayerY)"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 935064792783785,
+											"parameters": {
+												"seconds": "0.35"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Enemy1",
+											"sid": 768454653594926,
+											"parameters": {
+												"instance-variable": "StateMachine",
+												"value": "\"Cooldown\""
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Enemy1",
+											"sid": 887407960547393,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Enemy1",
+											"sid": 557668480989615,
+											"parameters": {
+												"animation": "\"Atack3\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 586160394071481,
+											"parameters": {
+												"seconds": "1"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy1",
+											"sid": 841182072505413,
+											"parameters": {
+												"instance-variable": "SkillActived",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Enemy1",
+											"sid": 498405045431823,
+											"parameters": {
+												"instance-variable": "StateMachine",
+												"value": "\"\"\n"
+											}
+										}
+									],
+									"sid": 173543939670393
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 829398472550354,
+									"parameters": {
+										"instance-variable": "State_Machine",
+										"comparison": 0,
+										"value": "\"Dying\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy1",
+									"sid": 810912499343163,
+									"parameters": {
+										"animation": "\"Atack2\""
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Enemy1",
+									"sid": 849235997036209,
+									"parameters": {
+										"object": "Player"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 910824638695594
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerDeath",
+									"sid": 841558787548184
+								}
+							],
+							"sid": 447702036623960
+						}
+					],
+					"sid": 954926892038203
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemy2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Enemy2",
+									"sid": 239430873301388,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy2",
+									"sid": 124689578647808,
+									"parameters": {
+										"animation": "\"Spawning\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Enemy2",
+									"sid": 177377238164229,
+									"parameters": {
+										"instance-variable": "SkillActived"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 828729425007021,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "PlayerX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 470054768191712
+								},
+								{
+									"eventType": "variable",
+									"name": "PlayerY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 669278217202111
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy2",
+											"sid": 345100834156540,
+											"parameters": {
+												"instance-variable": "SkillActived",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Enemy2",
+											"sid": 421269641864212,
+											"parameters": {
+												"instance-variable": "StateMachine",
+												"value": "\"Atacking\""
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "Enemy2",
+											"sid": 839374640588785,
+											"behaviorType": "MoveTo2"
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 381954725559519,
+											"parameters": {
+												"seconds": "0.5"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Enemy2",
+											"sid": 519845308611763,
+											"parameters": {
+												"animation": "\"Atack\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 932579212579739,
+											"parameters": {
+												"seconds": "0.5"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Enemy2",
+											"sid": 416514603376384,
+											"parameters": {
+												"instance-variable": "StateMachine",
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy2",
+											"sid": 723761453306439,
+											"parameters": {
+												"instance-variable": "SkillActived",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 978324153644306
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 282087697054928,
+									"parameters": {
+										"instance-variable": "State_Machine",
+										"comparison": 0,
+										"value": "\"Dying\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy2",
+									"sid": 311585772558916,
+									"parameters": {
+										"animation": "\"Atack\""
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Enemy2",
+									"sid": 952050751774584,
+									"parameters": {
+										"object": "Player"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 387886580751891
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerDeath",
+									"sid": 331093054207451
+								}
+							],
+							"sid": 575024539319095
+						}
+					],
+					"sid": 582432508235477
+				}
+			],
+			"sid": 975374721683183
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "DemonEssence",
+					"sid": 632242479014287
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 565161213935887,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "DemonEssence",
+					"sid": 711440469691002,
+					"parameters": {
+						"opacity": "80"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 412828708120438,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "DemonEssence",
+					"sid": 243307998761028,
+					"parameters": {
+						"opacity": "60"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 964085854741108,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "DemonEssence",
+					"sid": 141109579134430,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 505241698584161,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "DemonEssence",
+					"sid": 511286564114638
+				}
+			],
+			"sid": 114471826537132
+		}
+	],
+	"sid": 471138869226271
+}

@@ -8,6 +8,20 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -57,8 +71,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Tilemap",
 			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Timeline",
+			"name": "Timeline controller",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -127,6 +155,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -154,7 +189,10 @@
 			"NWjs",
 			"Audio",
 			"Mouse",
-			"Keyboard"
+			"Keyboard",
+			"TimelineController",
+			"GunsArray",
+			"AJAX"
 		],
 		"subfolders": [
 			{
@@ -179,10 +217,12 @@
 				"items": [
 					"BGMainMenu",
 					"GameLogo",
-					"txtButton_MainMenu",
 					"MusicSliderBar",
 					"SFXSliderBar",
-					"MenuTextArt"
+					"MenuTextArt",
+					"Button_MainMenu",
+					"MenuBG_Frente",
+					"MenuBG_Personagem"
 				],
 				"subfolders": [],
 				"name": "MainMenu"
@@ -196,7 +236,9 @@
 					"MouseSprite",
 					"FadeUp",
 					"CollectCollision",
-					"FadeDown"
+					"FadeDown",
+					"DebugText",
+					"StyledTransition"
 				],
 				"subfolders": [],
 				"name": "SystemObjects"
@@ -205,7 +247,9 @@
 				"items": [
 					"SceneFrames",
 					"Mask",
-					"CutscenesTexts"
+					"CutscenesTexts",
+					"CutsceneGun",
+					"TiledBackground"
 				],
 				"subfolders": [],
 				"name": "Cutscenes Assets"
@@ -219,14 +263,16 @@
 					"PlayerGuns",
 					"Ammo",
 					"DemonEssence",
-					"Enemy3"
+					"Enemy3",
+					"RPGBullet"
 				],
 				"subfolders": [
 					{
 						"items": [
 							"GunLightSpots",
 							"LightSpots",
-							"GunShoot"
+							"GunShoot",
+							"Explosion"
 						],
 						"subfolders": [],
 						"name": "FX"
@@ -242,6 +288,20 @@
 				],
 				"subfolders": [],
 				"name": "Map & Props"
+			},
+			{
+				"items": [
+					"AmmoUI",
+					"GunUI",
+					"AmmoText",
+					"AmmoText2",
+					"EssenceBag",
+					"bag_contador",
+					"PortraitUI",
+					"GunsUI"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},
@@ -279,10 +339,7 @@
 			},
 			{
 				"items": [
-					"Game",
-					"Elevator",
-					"FinalRoom",
-					"FinalBoss"
+					"Game"
 				],
 				"subfolders": [],
 				"name": "Phases"
@@ -297,7 +354,10 @@
 			{
 				"items": [
 					"@GlobalVariables",
-					"@Main"
+					"@Main",
+					"@Player",
+					"@Enemys",
+					"@GlobalFunctions"
 				],
 				"subfolders": [],
 				"name": "System"
@@ -351,7 +411,7 @@
 					}
 				},
 				{
-					"name": "SFX_MainMenuButton.webm",
+					"name": "unused_MainMenuButton.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 360570676472235,
 					"file-info": {
@@ -359,7 +419,7 @@
 					}
 				},
 				{
-					"name": "LD53_sfx_pistol-shoot.webm",
+					"name": "notused_facada.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 274537359222831,
 					"file-info": {
@@ -367,7 +427,7 @@
 					}
 				},
 				{
-					"name": "LD53_sfx_player-step.webm",
+					"name": "notused_wtf.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 126500275127316,
 					"file-info": {
@@ -375,7 +435,7 @@
 					}
 				},
 				{
-					"name": "LD53_sfx_switch-wapon.webm",
+					"name": "notused_switchgun.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 419323584693961,
 					"file-info": {
@@ -383,7 +443,7 @@
 					}
 				},
 				{
-					"name": "LD53_sfx_bullet-impact.webm",
+					"name": "notused_impact.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 591325666107876,
 					"file-info": {
@@ -391,26 +451,246 @@
 					}
 				},
 				{
-					"name": "LD53_sfx_main-menu-botton.webm",
+					"name": "notused_btn.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 906198150320345,
 					"file-info": {
 						"purpose": "none"
 					}
-				}
-			],
-			"subfolders": []
-		},
-		"music": {
-			"items": [
+				},
 				{
-					"name": "0_MainMenuMusic.webm",
+					"name": "SFX_PlayerStep_1.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 556471448162509,
+					"sid": 128231002210587,
 					"file-info": {
 						"purpose": "none"
 					}
 				},
+				{
+					"name": "SFX_PlayerStep_2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 317115584894100,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_PlayerStep_3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 390754844572317,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_GunReload.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 222631532340015,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_GunPistolShot.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 754997108405077,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_PlayerDeath.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 808490197259690,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LD53_DEMONHO ESPLUDIU.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 500147901244606,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LD53_SHOOT HIT.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 561511274329424,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_MainMenuButton.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 189952863434126,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_EssenceCollect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 554298035365082,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "unused_TransitionClosing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 499192633657789,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "unused_TransitionOpening.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 472757354926543,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_TransitionClose.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 528946521513688,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_TransitionOpen.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 149950445353376,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [],
+					"subfolders": [],
+					"name": "Steps"
+				},
+				{
+					"items": [
+						{
+							"name": "SFX_Zap.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 653434469361327,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_Agulha.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 704055166930482,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_Cola.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 825767388003228,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "hurt.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 252484843284406,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "jaqueta.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 461838849438761,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shoes.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 239991520880309,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "whut.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 676184957601334,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "readingg.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 240727899060824,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "zipper.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 261471605207415,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LD53_whistle.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 986197575717541,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LD53_CHOIRS-UOH 231312312-NEWGUN.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 357890111285064,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LD53_whistle 1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 854406892933001,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "ES_Bandage Remove - SFX Producer.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 804313912802743,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Cutscene2SFX"
+				}
+			]
+		},
+		"music": {
+			"items": [
 				{
 					"name": "1_LevelMusicOLD.webm",
 					"type": "audio/webm; codecs=opus",
@@ -420,9 +700,73 @@
 					}
 				},
 				{
-					"name": "1_LevelMusic.webm",
+					"name": "2_CutsceneMusic.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 563899017003685,
+					"sid": 183345430195685,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "3_Cutscene2Music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 799394322489346,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "0_MainMenuMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 896275276025519,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "1_LevelMusic2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 599979094762735,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "1_LevelMusic3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 430204161046498,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "1_LevelMusic4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 858066577226039,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "1_LevelMusic1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 803551616758148,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "2_Cutscene1Music1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 859967403654212,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "2_Cutscene1Music2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 168279062690546,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -517,13 +861,22 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "GunsArray.json",
+					"type": "application/json",
+					"sid": 468979394348585,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
 	"timelines": {
 		"items": [
-			"Timeline 1"
+			"Cutscene2"
 		],
 		"subfolders": [
 			{

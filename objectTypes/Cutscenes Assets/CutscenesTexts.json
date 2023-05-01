@@ -4,6 +4,12 @@
 	"sid": 529329714929891,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 306083907933165
+		}
+	],
 	"effectTypes": []
 }

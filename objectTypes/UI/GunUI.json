@@ -1,0 +1,101 @@
+{
+	"name": "GunUI",
+	"plugin-id": "Sprite",
+	"sid": 498748287749189,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "PistolAmmoInMagazine",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 545738652899632
+		},
+		{
+			"name": "RifleAmmoInMagazine",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 872902067243791
+		},
+		{
+			"name": "RPGAmmoInMagazine",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 753252935811743
+		},
+		{
+			"name": "ShotgunAmmoInMagazine",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 503834381137207
+		},
+		{
+			"name": "ActualGun",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 940175698285192
+		},
+		{
+			"name": "TotalAmmoPistol",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 550313724137190
+		},
+		{
+			"name": "TotalAmmoShotgun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 296543991521475
+		},
+		{
+			"name": "TotalAmmoRifle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 262189768171873
+		},
+		{
+			"name": "TotalAmmoRPG",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 298300766550590
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 70,
+						"height": 32,
+						"originX": 0.5,
+						"originY": -3.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8068007,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 188212051224790,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

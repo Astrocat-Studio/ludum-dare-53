@@ -436,7 +436,18 @@
 		}
 	],
 	"sid": 840451439944851,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "GunsArray",
+			"properties": {
+				"width": 4,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 95,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 324,
 	"height": 288,

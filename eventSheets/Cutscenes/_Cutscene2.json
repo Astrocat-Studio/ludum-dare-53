@@ -2,14 +2,8 @@
 	"name": "_Cutscene2",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "Variable1",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 702232588042153
+			"eventType": "include",
+			"includeSheet": "@GlobalVariables"
 		},
 		{
 			"eventType": "block",
@@ -17,119 +11,1095 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 686510356897760
+					"sid": 682061729063175
 				}
 			],
 			"actions": [
 				{
-					"id": "add-to-eventvar",
+					"id": "reset-persisted-objects",
 					"objectClass": "System",
-					"sid": 786627302588730,
+					"sid": 172361238095309
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "TiledBackground",
+					"sid": 327863727717188,
+					"behaviorType": "MoveTo",
 					"parameters": {
-						"variable": "Phase",
+						"x": "-527.043434",
+						"y": "-4.764693",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 581498997712132,
+					"parameters": {
+						"audio-file": "3_Cutscene2Music",
+						"loop": "looping",
+						"volume": "MusicVolume - 15",
+						"stereo-pan": "0",
+						"tag-optional": "\"GameMusic\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 457325079646221,
+					"parameters": {
+						"variable": "CutsceneStep",
+						"value": "0"
+					}
+				},
+				{
+					"callFunction": "StyledTransition",
+					"sid": 406623031985315,
+					"parameters": [
+						"\"Open\"",
+						"\"\""
+					]
+				},
+				{
+					"callFunction": "Transition",
+					"sid": 315629133975161,
+					"disabled": true,
+					"parameters": [
+						"\"FadeIn\"",
+						"\"\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 359369657009961,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 201916231079451,
+					"disabled": true,
+					"parameters": {
+						"variable": "CutsceneStep",
 						"value": "1"
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 250547484647070,
+					"id": "set-visible",
+					"objectClass": "SceneFrames",
+					"sid": 750181313695658,
 					"parameters": {
-						"seconds": "5"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 134077175328184,
-					"parameters": {
-						"layer": "\"FirstScene\"",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 243067808559876,
-					"parameters": {
-						"layer": "\"SecondScene\"",
 						"visibility": "visible"
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 739056442759882,
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 680795854691660,
 					"parameters": {
-						"seconds": "5"
+						"timeline": "Cutscene2",
+						"tags": "\"Cutscene2\""
 					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 633325902456720,
-					"parameters": {
-						"layer": "\"SecondScene\"",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 495038088933877,
-					"parameters": {
-						"layer": "\"ThirdScene\"",
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 618515167989151,
-					"parameters": {
-						"seconds": "5"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 576935483283501,
-					"parameters": {
-						"layer": "\"ThirdScene\"",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 399299088455644,
-					"parameters": {
-						"layer": "\"FourthScene\"",
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 139826653506483,
-					"parameters": {
-						"seconds": "5"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 400141239964767,
-					"parameters": {
-						"layout": "Game"
-					}
-				},
-				{
-					"callFunction": "EndGameVerify",
-					"sid": 239836434845554
 				}
 			],
-			"sid": 485373725738287
+			"sid": 481911067306150,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 616656688158176,
+							"parameters": {
+								"variable": "Phase",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 222410318571041,
+							"parameters": {
+								"variable": "Phase",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "CutsceneGun",
+							"sid": 587750057094092,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 297712634688023
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 211691170134092
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 204317953435327,
+							"parameters": {
+								"variable": "Phase",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 530835815669881,
+							"parameters": {
+								"variable": "Phase",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "CutsceneGun",
+							"sid": 400947322286436,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 257190086234484
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 857778427598336
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 155096762222872,
+							"parameters": {
+								"variable": "Phase",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 900070230119021,
+							"parameters": {
+								"variable": "Phase",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "CutsceneGun",
+							"sid": 411826207635379,
+							"parameters": {
+								"frame-number": "2"
+							}
+						}
+					],
+					"sid": 878551865951179
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "Group1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-arrived",
+							"objectClass": "SceneFrames",
+							"sid": 591119543127353,
+							"behaviorType": "MoveTo"
+						}
+					],
+					"actions": [],
+					"sid": 973050619574874,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 992750166029371,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "fator",
+							"type": "number",
+							"initialValue": "0.025",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 262382896516448
+						},
+						{
+							"eventType": "variable",
+							"name": "texto",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 285112542187919
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 116589411715659,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 794308693010032
+								}
+							],
+							"actions": [],
+							"sid": 256610826790940,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SceneFrames",
+											"sid": 479862071424271,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-position",
+											"objectClass": "SceneFrames",
+											"sid": 652408948089736,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"x": "Self.X",
+												"y": "72",
+												"mode": "direct"
+											}
+										},
+										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 436299682705771,
+											"parameters": {
+												"tag": "\"Next\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 939935722541974,
+											"parameters": {
+												"variable": "CutsceneStep",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 536484572433691,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 432984713806013,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 301975635871159
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 127341063703068,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"It's the 30th, time to close out the quarterly soul balance sheet, baby!\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 608582375208266,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 240602233806985,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 443983096792580,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 917347859728883,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 176902451870396,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 823814910057198
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 876317315464379,
+									"parameters": {
+										"layer": "\"FirstScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 548052948815071,
+									"parameters": {
+										"layer": "\"SecondScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 928848177221909,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"Alister, a young full-time shinigami, is chillin' playing video games on the clock.\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 244870053049763,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 804766693121395,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 246174541752671,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 356483154023583,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 381758299705060,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "4"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 961064474504182
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 562045975672932,
+									"parameters": {
+										"layer": "\"SecondScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 590516687198120,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 238994800889338,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"Then some fool decides to blow up Alister's personal cell, like bro, he's at work! He can't just answer that sh*t.\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 357715971511406,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 377096711050344,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 692262791084670,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 244518696382726,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 503744080842481,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "5"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 936655492198844
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 282673113748511,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"But oh snap, turns out it was his boss calling. He needs Alister to hurry up and collect those demon essences for an emergency delivery.\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 690084545233566,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 491881115564369,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 802302261299885,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "6"
+									}
+								}
+							],
+							"sid": 870809479865307,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 348014910786586,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "6"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 579758307954193
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 334373245689432,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"Alister's like, 'Aw, man, why you gotta interrupt my game time like that? Fine, I will go get those essences for ya, but you owe me big time, boss.'\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 902557602626876,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 250922730360015,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 689139270481186,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "7"
+									}
+								}
+							],
+							"sid": 445447274267821,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 434501703765907,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "7"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 392353933530011
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 198060765795865,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 587895360722531,
+									"parameters": {
+										"layer": "\"FourthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 228567153377963,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"But once he finishes his game, Alister's ready to get his work on. Gotta collect them souls, ya know what I'm sayin'?\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 951028794104446,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 100034002775432,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 169556487541079,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "8"
+									}
+								}
+							],
+							"sid": 973350113726290,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 407428351322332,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"comparison": 0,
+										"value": "8"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 260193823876487
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 191511555067025,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"And just like that, Alister's off to collect some demon juice. Gotta hustle and get that delivery done ASAP.\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 551424993635701,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 760379865410047,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 685609618472733,
+									"parameters": {
+										"tag": "\"GameMusic\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 886789865666115,
+									"parameters": [
+										"\"FadeOut\"",
+										"\"Game\""
+									]
+								}
+							],
+							"sid": 866137954302781,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 233239440805148,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 146575639171249,
+							"parameters": {
+								"key": 13
+							}
+						},
+						{
+							"id": "on-any-click",
+							"objectClass": "Mouse",
+							"sid": 501047958829677
+						}
+					],
+					"actions": [],
+					"sid": 382658510179559,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-running-typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 625672505727134
+								}
+							],
+							"actions": [
+								{
+									"id": "typewriter-finish",
+									"objectClass": "CutscenesTexts",
+									"sid": 597816670357649
+								}
+							],
+							"sid": 506782423751290,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 838569332966131
+								}
+							],
+							"actions": [
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 390785800904992,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								}
+							],
+							"sid": 341727706449358,
+							"disabled": true
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 671454158234192,
+							"parameters": {
+								"key": 88
+							}
+						}
+					],
+					"actions": [],
+					"sid": 562279471882732,
+					"disabled": true
+				}
+			],
+			"sid": 799243785999238
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timeline-finished-by-tags",
+					"objectClass": "TimelineController",
+					"sid": 686077708844120,
+					"parameters": {
+						"tags": "\"Cutscene2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "CutscenesTexts",
+					"sid": 266044666392442,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "CutscenesTexts",
+					"sid": 383013654489395,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.25",
+						"off-time": "0.25",
+						"duration": "5"
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 651783844572877,
+					"parameters": {
+						"tag": "\"Next\""
+					}
+				},
+				{
+					"callFunction": "Transition",
+					"sid": 619521496020517,
+					"parameters": [
+						"\"FadeOut\"",
+						"\"Game\""
+					]
+				}
+			],
+			"sid": 453203302599629
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 725304024315997,
+					"parameters": {
+						"key": 90
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 802729286562419,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "on-any-click",
+					"objectClass": "Mouse",
+					"sid": 342741016740061
+				}
+			],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 711642854578838,
+					"parameters": {
+						"tag": "\"Next\""
+					}
+				}
+			],
+			"sid": 132249948874770,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "TiledBackground",
+					"sid": 959785884796837,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [],
+			"sid": 166920858314971,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 147885039606268,
+							"parameters": {
+								"value": "TiledBackground.X",
+								"lower-bound": "-525",
+								"upper-bound": "-528"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "TiledBackground",
+							"sid": 172968450765942,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "-3.269863",
+								"y": "-457.386374",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 306370837908247
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 963455300125219,
+							"parameters": {
+								"value": "TiledBackground.X",
+								"lower-bound": "-2",
+								"upper-bound": "-6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "TiledBackground",
+							"sid": 615583373029927,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "-527.043434",
+								"y": "-4.764693",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 238274706135222
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-flash-ended",
+					"objectClass": "CutscenesTexts",
+					"sid": 468312187631246,
+					"behaviorType": "Flash"
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "CutscenesTexts",
+					"sid": 809247082787544,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.25",
+						"off-time": "0.25",
+						"duration": "5"
+					}
+				}
+			],
+			"sid": 754867826973783
 		}
 	],
 	"sid": 362372737733134

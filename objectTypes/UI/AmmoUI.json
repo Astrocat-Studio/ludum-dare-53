@@ -1,0 +1,20 @@
+{
+	"name": "AmmoUI",
+	"plugin-id": "TiledBg",
+	"sid": 744358042581505,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 8,
+		"height": 4,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 4234284,
+		"useCollisionPoly": true
+	}
+}
