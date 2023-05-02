@@ -241,114 +241,6 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-mouse-wheel",
-											"objectClass": "Mouse",
-											"sid": 926470542757282,
-											"parameters": {
-												"direction": "up"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Player",
-											"sid": 975151394341820,
-											"parameters": {
-												"instance-variable": "ShootCooldown",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 136187687078467,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 945104534314145,
-													"parameters": {
-														"instance-variable": "Gun",
-														"comparison": 3,
-														"value": "2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "add-to-instvar",
-													"objectClass": "Player",
-													"sid": 727036728013599,
-													"parameters": {
-														"instance-variable": "Gun",
-														"value": "1"
-													}
-												}
-											],
-											"sid": 866438778240423
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-mouse-wheel",
-											"objectClass": "Mouse",
-											"sid": 984057882021819,
-											"parameters": {
-												"direction": "down"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Player",
-											"sid": 931065279901132,
-											"parameters": {
-												"instance-variable": "ShootCooldown",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 770330911056091,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 952103308023232,
-													"parameters": {
-														"instance-variable": "Gun",
-														"comparison": 5,
-														"value": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "subtract-from-instvar",
-													"objectClass": "Player",
-													"sid": 799258024007026,
-													"parameters": {
-														"instance-variable": "Gun",
-														"value": "1"
-													}
-												}
-											],
-											"sid": 345048260747684
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
 											"id": "on-key-pressed",
 											"objectClass": "Keyboard",
 											"sid": 966601429629742,
@@ -359,12 +251,50 @@
 									],
 									"actions": [
 										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 984954972347253,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "true"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 473286331423658,
+											"parameters": {
+												"audio-file": "notused_switchgun",
+												"loop": "not-looping",
+												"volume": "SFXVolume + 15",
+												"stereo-pan": "0",
+												"tag-optional": "\"SwitchGun\""
+											}
+										},
+										{
 											"id": "set-instvar-value",
 											"objectClass": "Player",
-											"sid": 257754826511193,
+											"sid": 460281489734659,
 											"parameters": {
 												"instance-variable": "Gun",
 												"value": "0"
+											}
+										},
+										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 891482472594554,
+											"parameters": {
+												"tag": "\"GunSwitched\""
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 690458123371356,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "false"
 											}
 										},
 										{
@@ -403,18 +333,56 @@
 									],
 									"actions": [
 										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 823918107093722,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "true"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 760081550143227,
+											"parameters": {
+												"audio-file": "notused_switchgun",
+												"loop": "not-looping",
+												"volume": "SFXVolume + 15",
+												"stereo-pan": "0",
+												"tag-optional": "\"SwitchGun\""
+											}
+										},
+										{
 											"id": "set-instvar-value",
 											"objectClass": "Player",
-											"sid": 387735326079077,
+											"sid": 770627094830951,
 											"parameters": {
 												"instance-variable": "Gun",
 												"value": "1"
 											}
 										},
 										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 684312904947063,
+											"parameters": {
+												"tag": "\"GunSwitched\""
+											}
+										},
+										{
 											"id": "set-boolean-instvar",
 											"objectClass": "Player",
-											"sid": 600449930796601,
+											"sid": 391028226821857,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 851636887366468,
 											"parameters": {
 												"instance-variable": "ShootCooldown",
 												"value": "false"
@@ -447,18 +415,56 @@
 									],
 									"actions": [
 										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 309312893657710,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "true"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 334242958378291,
+											"parameters": {
+												"audio-file": "notused_switchgun",
+												"loop": "not-looping",
+												"volume": "SFXVolume + 15",
+												"stereo-pan": "0",
+												"tag-optional": "\"SwitchGun\""
+											}
+										},
+										{
 											"id": "set-instvar-value",
 											"objectClass": "Player",
-											"sid": 864665114242187,
+											"sid": 192873962362297,
 											"parameters": {
 												"instance-variable": "Gun",
 												"value": "2"
 											}
 										},
 										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 129338383599141,
+											"parameters": {
+												"tag": "\"GunSwitched\""
+											}
+										},
+										{
 											"id": "set-boolean-instvar",
 											"objectClass": "Player",
-											"sid": 366483792203749,
+											"sid": 541081221410556,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 187523521250083,
 											"parameters": {
 												"instance-variable": "ShootCooldown",
 												"value": "false"
@@ -491,18 +497,56 @@
 									],
 									"actions": [
 										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 525821750583569,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "true"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 763864242162013,
+											"parameters": {
+												"audio-file": "notused_switchgun",
+												"loop": "not-looping",
+												"volume": "SFXVolume + 15",
+												"stereo-pan": "0",
+												"tag-optional": "\"SwitchGun\""
+											}
+										},
+										{
 											"id": "set-instvar-value",
 											"objectClass": "Player",
-											"sid": 593940074654971,
+											"sid": 393499109672385,
 											"parameters": {
 												"instance-variable": "Gun",
 												"value": "3"
 											}
 										},
 										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 939337616604614,
+											"parameters": {
+												"tag": "\"GunSwitched\""
+											}
+										},
+										{
 											"id": "set-boolean-instvar",
 											"objectClass": "Player",
-											"sid": 378068751303760,
+											"sid": 870642532683625,
+											"parameters": {
+												"instance-variable": "SwitchGuns",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 976734493104285,
 											"parameters": {
 												"instance-variable": "ShootCooldown",
 												"value": "false"
@@ -510,6 +554,30 @@
 										}
 									],
 									"sid": 780619625323973
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-ended",
+											"objectClass": "Audio",
+											"sid": 764206109879197,
+											"parameters": {
+												"tag": "\"SwitchGun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 529987049984834,
+											"parameters": {
+												"tag": "\"GunSwitched\""
+											}
+										}
+									],
+									"sid": 498027034084414
 								},
 								{
 									"eventType": "variable",
@@ -695,6 +763,15 @@
 									}
 								},
 								{
+									"id": "set-instvar-value",
+									"objectClass": "GunLightSpots",
+									"sid": 176936396217254,
+									"parameters": {
+										"instance-variable": "BulletUID",
+										"value": "Ammo.UID"
+									}
+								},
+								{
 									"id": "pin-to-object-properties",
 									"objectClass": "GunLightSpots",
 									"sid": 637112263228454,
@@ -711,6 +788,34 @@
 								}
 							],
 							"sid": 361785693837477
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "Ammo",
+									"sid": 313974398734287
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GunLightSpots",
+									"sid": 408253672019175,
+									"parameters": {
+										"instance-variable": "BulletUID",
+										"comparison": 0,
+										"value": "Ammo.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "GunLightSpots",
+									"sid": 596670676017278
+								}
+							],
+							"sid": 764778278538476
 						},
 						{
 							"eventType": "block",
@@ -870,283 +975,161 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Enemy",
-									"sid": 972810395385893,
+									"sid": 343873571930851,
 									"parameters": {
-										"instance-variable": "StateMachine",
-										"comparison": 0,
-										"value": "\"Spawning\""
-									},
-									"isInverted": true
+										"instance-variable": "HP",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 454159390622904
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Enemy",
+									"sid": 152858653621514,
+									"parameters": {
+										"object": "EnemyDeathAnimation",
+										"layer": "\"Enemys\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 766585138404709,
+									"parameters": {
+										"audio-file": "LD53_SHOOT HIT",
+										"loop": "not-looping",
+										"volume": "SFXVolume",
+										"stereo-pan": "0",
+										"tag-optional": "\"GameSFX\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 664791390120066,
+									"parameters": {
+										"audio-file": "LD53_DEMONHO ESPLUDIU",
+										"loop": "not-looping",
+										"volume": "SFXVolume",
+										"stereo-pan": "0",
+										"tag-optional": "\"GameSFX\""
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "GameCamera",
+									"sid": 546524425458024,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "2",
+										"duration": "0.4",
+										"mode": "reducing-magnitude"
+									}
+								}
+							],
 							"sid": 886593790315355,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-collision-with-another-object",
-											"objectClass": "Ammo",
-											"sid": 373963183215438,
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 819656796589351,
 											"parameters": {
-												"object": "Enemy"
+												"first-value": "Enemy.ObjectTypeName",
+												"comparison": 0,
+												"second-value": "\"Enemy1\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 859450195797712,
-											"parameters": {
-												"audio-file": "LD53_SHOOT HIT",
-												"loop": "not-looping",
-												"volume": "SFXVolume",
-												"stereo-pan": "0",
-												"tag-optional": "\"GameSFX\""
-											}
-										},
-										{
 											"id": "set-animation",
-											"objectClass": "Enemy",
-											"sid": 200931976874867,
+											"objectClass": "EnemyDeathAnimation",
+											"sid": 784938954340865,
 											"parameters": {
-												"animation": "\"Exploding\"",
+												"animation": "\"Enemy1\"",
 												"from": "beginning"
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Enemy",
-											"sid": 709147891673406,
-											"behaviorType": "MoveTo2"
-										},
-										{
-											"id": "shake",
-											"objectClass": "GameCamera",
-											"sid": 979068407421516,
-											"behaviorType": "ScrollTo",
-											"parameters": {
-												"magnitude": "2",
-												"duration": "0.4",
-												"mode": "reducing-magnitude"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy",
-											"sid": 861401260702756,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"Exploding\""
 											}
 										}
 									],
-									"sid": 365298400372686,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "Ammo",
-													"sid": 422801004588624,
-													"parameters": {
-														"object": "GunLightSpots"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "destroy",
-													"objectClass": "GunLightSpots",
-													"sid": 637239966675607
-												},
-												{
-													"id": "destroy",
-													"objectClass": "Ammo",
-													"sid": 684434683512155
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 277456847408880,
-													"parameters": {
-														"audio-file": "LD53_DEMONHO ESPLUDIU",
-														"loop": "not-looping",
-														"volume": "SFXVolume",
-														"stereo-pan": "0",
-														"tag-optional": "\"GameSFX\""
-													}
-												}
-											],
-											"sid": 754933040306591
-										}
-									]
+									"sid": 330718661108251
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-collision-with-another-object",
-											"objectClass": "RPGBullet",
-											"sid": 376417810394159,
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 776654584371511,
 											"parameters": {
-												"object": "Enemy"
+												"first-value": "Enemy.ObjectTypeName",
+												"comparison": 0,
+												"second-value": "\"Enemy2\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 582399155790536,
-											"parameters": {
-												"audio-file": "LD53_SHOOT HIT",
-												"loop": "not-looping",
-												"volume": "SFXVolume",
-												"stereo-pan": "0",
-												"tag-optional": "\"GameSFX\""
-											}
-										},
-										{
 											"id": "set-animation",
-											"objectClass": "Enemy",
-											"sid": 431488625569786,
+											"objectClass": "EnemyDeathAnimation",
+											"sid": 987332979820717,
 											"parameters": {
-												"animation": "\"Exploding\"",
+												"animation": "\"Enemy2\"",
 												"from": "beginning"
 											}
-										},
+										}
+									],
+									"sid": 240864908814841
+								},
+								{
+									"eventType": "block",
+									"conditions": [
 										{
-											"id": "stop",
-											"objectClass": "Enemy",
-											"sid": 681675088011532,
-											"behaviorType": "MoveTo2"
-										},
-										{
-											"id": "shake",
-											"objectClass": "GameCamera",
-											"sid": 885714130906116,
-											"behaviorType": "ScrollTo",
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 863779577252695,
 											"parameters": {
-												"magnitude": "2",
-												"duration": "0.4",
-												"mode": "reducing-magnitude"
+												"first-value": "Enemy.ObjectTypeName",
+												"comparison": 0,
+												"second-value": "\"Enemy3\""
 											}
-										},
+										}
+									],
+									"actions": [
 										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy",
-											"sid": 692786571115680,
+											"id": "set-animation",
+											"objectClass": "EnemyDeathAnimation",
+											"sid": 783571878190820,
 											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"Exploding\""
+												"animation": "\"Enemy3\"",
+												"from": "beginning"
 											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "RPGBullet",
-											"sid": 299667616967040,
-											"parameters": {
-												"object": "Explosion",
-												"layer": "\"FX\"",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Explosion",
-											"sid": 721200285313254,
-											"parameters": {
-												"scale": "0.5"
-											}
-										},
+										}
+									],
+									"sid": 684850998815610
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
 										{
 											"id": "destroy",
-											"objectClass": "RPGBullet",
-											"sid": 214278767436560
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 191832343763234,
-											"parameters": {
-												"audio-file": "LD53_DEMONHO ESPLUDIU",
-												"loop": "not-looping",
-												"volume": "SFXVolume",
-												"stereo-pan": "0",
-												"tag-optional": "\"GameSFX\""
-											}
+											"objectClass": "Enemy",
+											"sid": 892095739813486
 										}
 									],
-									"sid": 349616884178330
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-collision-with-another-object",
-											"objectClass": "Enemy",
-											"sid": 132017244300999,
-											"parameters": {
-												"object": "Explosion"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 869519380780352,
-											"parameters": {
-												"audio-file": "LD53_SHOOT HIT",
-												"loop": "not-looping",
-												"volume": "SFXVolume",
-												"stereo-pan": "0",
-												"tag-optional": "\"GameSFX\""
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Enemy",
-											"sid": 476496492265374,
-											"parameters": {
-												"animation": "\"Exploding\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Enemy",
-											"sid": 119968824551638,
-											"behaviorType": "MoveTo2"
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Enemy",
-											"sid": 802940525204044,
-											"parameters": {
-												"instance-variable": "StateMachine",
-												"value": "\"Exploding\""
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 137035816414882,
-											"parameters": {
-												"audio-file": "LD53_DEMONHO ESPLUDIU",
-												"loop": "not-looping",
-												"volume": "SFXVolume",
-												"stereo-pan": "0",
-												"tag-optional": "\"GameSFX\""
-											}
-										}
-									],
-									"sid": 822875202831410
+									"sid": 119913076179997
 								}
 							]
 						},
@@ -1154,19 +1137,267 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-animation-finished",
-									"objectClass": "Enemy",
-									"sid": 656903766469598,
+									"id": "on-collision-with-another-object",
+									"objectClass": "Ammo",
+									"sid": 928348512292110,
 									"parameters": {
-										"animation": "\"Exploding\""
+										"object": "Enemy"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "spawn-another-object",
+									"id": "destroy",
+									"objectClass": "Ammo",
+									"sid": 614626419923395
+								}
+							],
+							"sid": 689963735788066,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Ammo",
+											"sid": 680949377705107,
+											"parameters": {
+												"animation": "\"PistolShoot\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Ammo",
+											"sid": 517513616767938,
+											"parameters": {
+												"animation": "\"RifleShoot\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Enemy",
+											"sid": 355964904535892,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 406720418436739,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Ammo",
+											"sid": 181545183929915,
+											"parameters": {
+												"animation": "\"ShotgunShoot\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Enemy",
+											"sid": 507466274595285,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 733296289694949,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy",
+											"sid": 185985028325807,
+											"parameters": {
+												"instance-variable": "HP",
+												"comparison": 3,
+												"value": "0"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "flash",
+											"objectClass": "Enemy",
+											"sid": 386547466305432,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "0.5"
+											}
+										}
+									],
+									"sid": 142401616516703
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "RPGBullet",
+									"sid": 429453063510320,
+									"parameters": {
+										"object": "Enemy"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
 									"objectClass": "Enemy",
-									"sid": 149791658143943,
+									"sid": 268183230405075,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "3"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "RPGBullet",
+									"sid": 515497157562784,
+									"parameters": {
+										"object": "Explosion",
+										"layer": "\"FX\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Explosion",
+									"sid": 520453063251333,
+									"parameters": {
+										"scale": "0.5"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "RPGBullet",
+									"sid": 612824976484489
+								}
+							],
+							"sid": 426199128773930,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy",
+											"sid": 171760540588184,
+											"parameters": {
+												"instance-variable": "HP",
+												"comparison": 3,
+												"value": "1"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "flash",
+											"objectClass": "Enemy",
+											"sid": 113520531936724,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "0.5"
+											}
+										}
+									],
+									"sid": 978284231927483
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemy",
+									"sid": 514395267384994,
+									"parameters": {
+										"object": "Explosion"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Enemy",
+									"sid": 700232656157017,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 428138758066530,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy",
+											"sid": 821138363218656,
+											"parameters": {
+												"instance-variable": "HP",
+												"comparison": 3,
+												"value": "1"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "flash",
+											"objectClass": "Enemy",
+											"sid": 587756268359880,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "0.5"
+											}
+										}
+									],
+									"sid": 574919976366553
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-animation-finished",
+									"objectClass": "EnemyDeathAnimation",
+									"sid": 819993245100168
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "EnemyDeathAnimation",
+									"sid": 879533469798131,
 									"parameters": {
 										"object": "DemonEssence",
 										"layer": "\"Instances\"",
@@ -1176,11 +1407,11 @@
 								},
 								{
 									"id": "destroy",
-									"objectClass": "Enemy",
-									"sid": 654873912875657
+									"objectClass": "EnemyDeathAnimation",
+									"sid": 687620644895983
 								}
 							],
-							"sid": 600740179391892
+							"sid": 112823036044643
 						}
 					],
 					"sid": 921180496478475
@@ -2082,6 +2313,26 @@
 										"instance-variable": "ShootCooldown"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player",
+									"sid": 772789050303266,
+									"parameters": {
+										"instance-variable": "SwitchGuns"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 636896336964550,
+									"parameters": {
+										"instance-variable": "State_Machine",
+										"comparison": 0,
+										"value": "\"Dying\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -2317,6 +2568,15 @@
 															}
 														},
 														{
+															"id": "set-animation",
+															"objectClass": "Ammo",
+															"sid": 389514070485115,
+															"parameters": {
+																"animation": "\"ShotgunShoot\"",
+																"from": "beginning"
+															}
+														},
+														{
 															"id": "spawn-another-object",
 															"objectClass": "PlayerGuns",
 															"sid": 591880665616510,
@@ -2348,6 +2608,15 @@
 															}
 														},
 														{
+															"id": "set-animation",
+															"objectClass": "Ammo",
+															"sid": 462135727679582,
+															"parameters": {
+																"animation": "\"ShotgunShoot\"",
+																"from": "beginning"
+															}
+														},
+														{
 															"id": "spawn-another-object",
 															"objectClass": "PlayerGuns",
 															"sid": 537053274335515,
@@ -2376,6 +2645,15 @@
 																"layer": "\"Projectiles\"",
 																"image-point": "1",
 																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Ammo",
+															"sid": 487615186613435,
+															"parameters": {
+																"animation": "\"ShotgunShoot\"",
+																"from": "beginning"
 															}
 														},
 														{
@@ -2497,6 +2775,15 @@
 															}
 														},
 														{
+															"id": "set-animation",
+															"objectClass": "Ammo",
+															"sid": 494257399356440,
+															"parameters": {
+																"animation": "\"RifleShoot\"",
+																"from": "beginning"
+															}
+														},
+														{
 															"id": "spawn-another-object",
 															"objectClass": "PlayerGuns",
 															"sid": 916479795945238,
@@ -2531,9 +2818,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 473506327305413,
+															"sid": 831755990017012,
 															"parameters": {
-																"seconds": "0.1"
+																"seconds": "0.2"
 															}
 														},
 														{
@@ -3417,9 +3704,9 @@
 					"actions": [
 						{
 							"callFunction": "StyledTransition",
-							"sid": 558039728913439,
+							"sid": 852241293776074,
 							"parameters": [
-								"\"Close\"",
+								"\"ClosingWounded\"",
 								"\"Cutscene_2\""
 							]
 						}

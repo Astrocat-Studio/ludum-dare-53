@@ -1,0 +1,25 @@
+{
+	"name": "Notification",
+	"plugin-id": "Text",
+	"sid": 254569204444396,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 809712847634041
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 520443404431438
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 230563850377121
+		}
+	],
+	"effectTypes": []
+}

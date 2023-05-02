@@ -1,0 +1,15 @@
+{
+	"name": "DebugText2",
+	"plugin-id": "Text",
+	"sid": 236118209053572,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 832287171065650
+		}
+	],
+	"effectTypes": []
+}

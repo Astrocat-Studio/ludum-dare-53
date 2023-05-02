@@ -261,7 +261,8 @@
 								"State_Machine": "Idle",
 								"Direction": 0,
 								"Gun": 0,
-								"ShootCooldown": false
+								"ShootCooldown": false,
+								"SwitchGuns": false
 							},
 							"behaviors": {
 								"8Direction": {

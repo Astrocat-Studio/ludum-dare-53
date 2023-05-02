@@ -41,23 +41,63 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "NextSpawnNumber",
-			"type": "number",
-			"initialValue": "3",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 383719758473406
-		},
-		{
-			"eventType": "variable",
-			"name": "SpawnCooldown",
+			"name": "GameTimer",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 687366009294997
+			"sid": 316442361505581
+		},
+		{
+			"eventType": "variable",
+			"name": "DifficultTimeGap",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 690016774178857
+		},
+		{
+			"eventType": "variable",
+			"name": "SpawnCooldown",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 991808828096846
+		},
+		{
+			"eventType": "variable",
+			"name": "MinSpawnCooldown",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 367639029760198
+		},
+		{
+			"eventType": "variable",
+			"name": "MaxSpawnNumber",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 103527303079014
+		},
+		{
+			"eventType": "variable",
+			"name": "SpawnNumber",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 383719758473406
 		},
 		{
 			"eventType": "variable",
@@ -82,6 +122,40 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 925178072337564
+		},
+		{
+			"eventType": "comment",
+			"text": "Enemy Levels"
+		},
+		{
+			"eventType": "variable",
+			"name": "Enemy1Level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 764544695706278
+		},
+		{
+			"eventType": "variable",
+			"name": "Enemy2Level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 941176814351669
+		},
+		{
+			"eventType": "variable",
+			"name": "Enemy3Level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 480277027232121
 		}
 	],
 	"sid": 490165718114906

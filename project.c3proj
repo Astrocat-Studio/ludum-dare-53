@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 33600,
-	"name": "Ludum-Dare-53",
+	"name": "Devil's Corp",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -155,6 +155,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
 			"author": "Scirra",
@@ -178,6 +185,13 @@
 			"type": "effect",
 			"id": "blurhorizontal",
 			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacecolor",
+			"name": "Replace color",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -238,7 +252,8 @@
 					"CollectCollision",
 					"FadeDown",
 					"DebugText",
-					"StyledTransition"
+					"StyledTransition",
+					"DebugText2"
 				],
 				"subfolders": [],
 				"name": "SystemObjects"
@@ -249,7 +264,9 @@
 					"Mask",
 					"CutscenesTexts",
 					"CutsceneGun",
-					"TiledBackground"
+					"TiledBackground",
+					"WoundScene",
+					"newGunAlister"
 				],
 				"subfolders": [],
 				"name": "Cutscenes Assets"
@@ -264,7 +281,8 @@
 					"Ammo",
 					"DemonEssence",
 					"Enemy3",
-					"RPGBullet"
+					"RPGBullet",
+					"EnemyDeathAnimation"
 				],
 				"subfolders": [
 					{
@@ -298,7 +316,8 @@
 					"EssenceBag",
 					"bag_contador",
 					"PortraitUI",
-					"GunsUI"
+					"GunsUI",
+					"Notification"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -387,8 +406,8 @@
 			{
 				"items": [
 					"_Cutscene1",
-					"_Cutscene2",
-					"_Custscene3"
+					"_Custscene3",
+					"_Cutscene2"
 				],
 				"subfolders": [],
 				"name": "Cutscenes"
@@ -692,30 +711,6 @@
 		"music": {
 			"items": [
 				{
-					"name": "1_LevelMusicOLD.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 608575609436329,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "2_CutsceneMusic.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 183345430195685,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "3_Cutscene2Music.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 799394322489346,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "0_MainMenuMusic.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 896275276025519,
@@ -764,9 +759,25 @@
 					}
 				},
 				{
+					"name": "3_Cutscene2Music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 903238389815804,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
 					"name": "2_Cutscene1Music2.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 168279062690546,
+					"sid": 121812512824828,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "4_FinalCutsceneMusic.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 375324007966445,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -875,9 +886,7 @@
 		}
 	},
 	"timelines": {
-		"items": [
-			"Cutscene2"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [],
@@ -886,11 +895,11 @@
 		]
 	},
 	"properties": {
-		"description": "",
-		"version": "1.0.0.0",
-		"author": "",
-		"authorEmail": "",
-		"authorWebsite": "",
+		"description": "Devil's Corp is a 2D pixel art game where you play as an employed hunter hired by the devil to collect demonic souls.",
+		"version": "1.0",
+		"author": "Astrocat Studio",
+		"authorEmail": "contact@astrocatstudio.com.br",
+		"authorWebsite": "https://astrocat-studio.itch.io/devils-corp",
 		"appId": "",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
@@ -931,7 +940,7 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "progress-logo",
+		"loaderStyle": "none",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",

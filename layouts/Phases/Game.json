@@ -879,12 +879,13 @@
 								"State_Machine": "Idle",
 								"Direction": 0,
 								"Gun": 0,
-								"ShootCooldown": false
+								"ShootCooldown": false,
+								"SwitchGuns": false
 							},
 							"behaviors": {
 								"8Direction": {
 									"properties": {
-										"max-speed": 75,
+										"max-speed": 85,
 										"acceleration": 600,
 										"deceleration": 500,
 										"directions": "dir-8",
@@ -967,7 +968,9 @@
 							"uid": 53,
 							"instanceVariables": {
 								"SkillActived": false,
-								"StateMachine": ""
+								"StateMachine": "",
+								"HP": 1,
+								"Level": 1
 							},
 							"behaviors": {
 								"Flash": {
@@ -1013,6 +1016,26 @@
 										"allow-sliding": false,
 										"default-controls": true,
 										"enabled": true
+									}
+								}
+							},
+							"effects": {
+								"ReplaceColor": {
+									"isEnabled": true,
+									"parameters": {
+										"source-color": [
+											1,
+											1,
+											1,
+											1
+										],
+										"replace-color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"tolerance": 0.01
 									}
 								}
 							},
@@ -1045,7 +1068,9 @@
 							"uid": 54,
 							"instanceVariables": {
 								"SkillActived": false,
-								"StateMachine": ""
+								"StateMachine": "",
+								"HP": 1,
+								"Level": 1
 							},
 							"behaviors": {
 								"Flash": {
@@ -1091,6 +1116,26 @@
 										"allow-sliding": false,
 										"default-controls": true,
 										"enabled": true
+									}
+								}
+							},
+							"effects": {
+								"ReplaceColor": {
+									"isEnabled": true,
+									"parameters": {
+										"source-color": [
+											1,
+											1,
+											1,
+											1
+										],
+										"replace-color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"tolerance": 0.01
 									}
 								}
 							},
@@ -1123,7 +1168,9 @@
 							"uid": 55,
 							"instanceVariables": {
 								"SkillActived": false,
-								"StateMachine": ""
+								"StateMachine": "",
+								"HP": 1,
+								"Level": 1
 							},
 							"behaviors": {
 								"Flash": {
@@ -1172,6 +1219,26 @@
 									}
 								}
 							},
+							"effects": {
+								"ReplaceColor": {
+									"isEnabled": true,
+									"parameters": {
+										"source-color": [
+											1,
+											1,
+											1,
+											1
+										],
+										"replace-color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"tolerance": 0.01
+									}
+								}
+							},
 							"world": {
 								"x": 259.1564025878906,
 								"y": 278.26812744140625,
@@ -1201,7 +1268,9 @@
 							"uid": 56,
 							"instanceVariables": {
 								"SkillActived": false,
-								"StateMachine": ""
+								"StateMachine": "",
+								"HP": 1,
+								"Level": 1
 							},
 							"behaviors": {
 								"Flash": {
@@ -1247,6 +1316,26 @@
 										"allow-sliding": false,
 										"default-controls": true,
 										"enabled": true
+									}
+								}
+							},
+							"effects": {
+								"ReplaceColor": {
+									"isEnabled": true,
+									"parameters": {
+										"source-color": [
+											1,
+											1,
+											1,
+											1
+										],
+										"replace-color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"tolerance": 0.01
 									}
 								}
 							},
@@ -1445,14 +1534,14 @@
 					"uid": 77,
 					"instanceVariables": {
 						"PistolAmmoInMagazine": 10,
-						"RifleAmmoInMagazine": 24,
+						"RifleAmmoInMagazine": 32,
 						"RPGAmmoInMagazine": 4,
 						"ShotgunAmmoInMagazine": 2,
 						"ActualGun": "Pistol",
-						"TotalAmmoPistol": 99,
-						"TotalAmmoShotgun": 15,
-						"TotalAmmoRifle": 120,
-						"TotalAmmoRPG": 8
+						"TotalAmmoPistol": 90,
+						"TotalAmmoShotgun": 35,
+						"TotalAmmoRifle": 240,
+						"TotalAmmoRPG": 16
 					},
 					"behaviors": {},
 					"world": {
@@ -1542,49 +1631,6 @@
 						"y": 258,
 						"width": 48.12512436135117,
 						"height": 4,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "DebugText",
-					"properties": {
-						"text": "Text",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 12,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 80,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 2.875882511013856,
-						"y": 2.37606257840595,
-						"width": 90.71936676578403,
-						"height": 17.263329459881582,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1762,8 +1808,8 @@
 					"world": {
 						"x": 292.00001998378764,
 						"y": 256.00001159432014,
-						"width": 64,
-						"height": 64,
+						"width": 66,
+						"height": 65,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1800,6 +1846,88 @@
 							1,
 							1,
 							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Notification",
+					"properties": {
+						"text": "The demons have become more powerful!",
+						"enable-bbcode": true,
+						"font": "Pixel-UniCode",
+						"size": 7,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 102,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 1,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 4,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0.25,
+								"wait-time": 2,
+								"fade-out-time": 0.25,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 162.00001140212868,
+						"y": 72.19585340692498,
+						"width": 164.45930495506144,
+						"height": 9.954147974899243,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0
 						],
 						"angle": 0,
 						"zElevation": 0

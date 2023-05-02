@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 537769926630108,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "BulletUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 372971835873123
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Sin",

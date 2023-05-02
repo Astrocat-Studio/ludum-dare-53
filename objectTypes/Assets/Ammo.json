@@ -30,7 +30,53 @@
 					}
 				],
 				"sid": 891607957650548,
-				"name": "Animation 1",
+				"name": "PistolShoot",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 9,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7100859,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 164558311903789,
+				"name": "ShotgunShoot",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 9,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2358999,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 305194843561082,
+				"name": "RifleShoot",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

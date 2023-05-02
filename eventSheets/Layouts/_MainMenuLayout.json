@@ -154,56 +154,83 @@
 					"isInverted": true
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 392489906853263,
+			"children": [
 				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 971789021403634,
-					"parameters": {
-						"variable": "ButtonClicked",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Button_MainMenu",
-					"sid": 297841813819656,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 353593005469686,
-					"parameters": {
-						"audio-file": "SFX_MainMenuButton",
-						"loop": "not-looping",
-						"volume": "SFXVolume",
-						"stereo-pan": "0",
-						"tag-optional": "\"GameSFX\""
-					}
-				},
-				{
-					"id": "shake",
-					"objectClass": "GameCamera",
-					"sid": 772117926286076,
-					"behaviorType": "ScrollTo",
-					"parameters": {
-						"magnitude": "5",
-						"duration": "0.4",
-						"mode": "reducing-magnitude"
-					}
-				},
-				{
-					"callFunction": "ChangeScreen",
-					"sid": 795619763993807,
-					"parameters": [
-						"Button_MainMenu.AnimationName"
-					]
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Button_MainMenu",
+							"sid": 448051842252443,
+							"parameters": {
+								"animation": "\"SFX\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Button_MainMenu",
+							"sid": 311623558440858,
+							"parameters": {
+								"animation": "\"Music\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 362265902952848,
+							"parameters": {
+								"variable": "ButtonClicked",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Button_MainMenu",
+							"sid": 468417153205911,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 498887502920534,
+							"parameters": {
+								"audio-file": "SFX_MainMenuButton",
+								"loop": "not-looping",
+								"volume": "SFXVolume",
+								"stereo-pan": "0",
+								"tag-optional": "\"GameSFX\""
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "GameCamera",
+							"sid": 914315001723201,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "5",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"callFunction": "ChangeScreen",
+							"sid": 106559459789792,
+							"parameters": [
+								"Button_MainMenu.AnimationName"
+							]
+						}
+					],
+					"sid": 665108750528697
 				}
-			],
-			"sid": 392489906853263
+			]
 		},
 		{
 			"eventType": "block",

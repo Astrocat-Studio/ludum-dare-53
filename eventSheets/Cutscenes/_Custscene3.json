@@ -63,9 +63,9 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 405958556289096,
+					"sid": 449963269284091,
 					"parameters": {
-						"audio-file": "2_CutsceneMusic",
+						"audio-file": "4_FinalCutsceneMusic",
 						"loop": "looping",
 						"volume": "MusicVolume",
 						"stereo-pan": "0",
@@ -480,62 +480,580 @@
 							"sid": 384736864468604
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 415075492402409,
+					"children": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 870273350904651,
-							"parameters": {
-								"layer": "\"ThirdScene\"",
-								"visibility": "invisible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 920084855773677,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 933742312046497,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 265407066811748,
+									"parameters": {
+										"layer": "\"FifthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 575984736990731,
+									"parameters": {
+										"object-to-create": "SceneFrames",
+										"layer": "\"FifthScene\"",
+										"x": "162",
+										"y": "144",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "SceneFrames",
+									"sid": 426756839630256,
+									"parameters": {
+										"width": "327",
+										"height": "200"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "SceneFrames",
+									"sid": 294969866432206,
+									"parameters": {
+										"animation": "\"BossGIF3\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "start-animation",
+									"objectClass": "SceneFrames",
+									"sid": 998149856210951,
+									"parameters": {
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 817579260076426,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"But then, the boss leans in close and says in a deep, menacing voice, [color=#ffd800]Alister, you failed in the most ridiculous and humiliating way possible by collecting only [/color]\"&DemonEssence&\" essences. [color=#ffd800]But you know what's even more pathetic? The loser controlling you. P A T H E T I C.[/color]\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 759552834742288,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 276849481259129,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 940893895667138,
+									"parameters": {
+										"tag": "\"GameMusic\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 173381312473287
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 119596985549205,
+									"parameters": [
+										"\"FadeOut\"",
+										"\"MainMenu\""
+									]
+								}
+							],
+							"sid": 778895100233103
 						},
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 652058966897636,
-							"parameters": {
-								"layer": "\"FourthScene\"",
-								"visibility": "visible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 674122686207147,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 5,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 403562521481651,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 2,
+										"value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 870273350904651,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 709395271205523,
+									"parameters": {
+										"layer": "\"FifthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 279654661634583,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"But then, the boss leans in close and says in a deep, menacing voice, [color=#ffd800]Only [/color]\"&DemonEssence&\" [color=#ffd800]demon essences? Is that the best you can do, Alister? You might wanna swing by HR after this.[/color]\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 727646441550236,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 372577504734569,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 945895886607455,
+									"parameters": {
+										"tag": "\"GameMusic\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 117936586332662
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 434238500278059,
+									"parameters": [
+										"\"FadeOut\"",
+										"\"MainMenu\""
+									]
+								}
+							],
+							"sid": 821301106391133
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 316653190118861,
-							"parameters": {
-								"variable": "texto",
-								"value": "\"But then, the boss leans in close and says in a deep, menacing voice, [color=#ffd800]Alister, my boy... you've done well. But there's one more thing I need you to do for me.[/color]\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 422119846100314,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 0,
+										"value": "666"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 176684266877892,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 215194702126681,
+									"parameters": {
+										"layer": "\"FifthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 138237542125151,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"[color=#ffd800]Whoa, dude! You totally knocked it outta the park! I'm like, super impressed! And the cherry on top? You totally rocked that devilish brand in your work! You make me so dang proud! I'd totally do a bl*owjob in ya if you weren't so darn tiny![/color]\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 615734532692384,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 124009857587072,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 632122230512536,
+									"parameters": {
+										"tag": "\"GameMusic\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 812428259292827
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 608952290553234,
+									"parameters": [
+										"\"FadeOut\"",
+										"\"MainMenu\""
+									]
+								}
+							],
+							"sid": 909873461022120
 						},
 						{
-							"id": "typewriter-text",
-							"objectClass": "CutscenesTexts",
-							"sid": 424790291306963,
-							"parameters": {
-								"text": "texto",
-								"duration": "len(texto) * fator"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 170092493002514,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 0,
+										"value": "69"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 138315876235294,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 689776209919933,
+									"parameters": {
+										"layer": "\"FifthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 304715496625079,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"[color=#ffd800]Well, well, well, what do we have here? You want some of this, huh? You interested, you stud muffin? Woah, woah, woah, slow your roll there, buddy. Don't you go tempting me like that![/color]\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 322636545631176,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 650482035944776,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 259754665089341,
+									"parameters": {
+										"tag": "\"GameMusic\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 548251848462604
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 927902235660437,
+									"parameters": [
+										"\"FadeOut\"",
+										"\"MainMenu\""
+									]
+								}
+							],
+							"sid": 418853056701316
 						},
 						{
-							"id": "wait-for-signal",
-							"objectClass": "System",
-							"sid": 293344606599234,
-							"parameters": {
-								"tag": "\"Next\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 710932575321936,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 5,
+										"value": "9999"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 143458878089789,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 288233351012487,
+									"parameters": {
+										"layer": "\"FifthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 307206313540885,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"[color=#ffd800]You sneaky little devil! You're using cheats, aren't you? What a loser move! I'm totally gonna share this gameplay on your Twitter and expose you for the pathetic cheater you are![/color]\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 877802846495401,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 897367237229775,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 364747089605467,
+									"parameters": {
+										"tag": "\"GameMusic\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "reset-global-variables",
+									"objectClass": "System",
+									"sid": 669552604732937
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 530731556063068,
+									"parameters": [
+										"\"FadeOut\"",
+										"\"MainMenu\""
+									]
+								}
+							],
+							"sid": 238914665894214
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 264056870268997,
-							"parameters": {
-								"variable": "CutsceneStep",
-								"value": "7"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 633363456733995,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 4,
+										"value": "50"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 325674975907841,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 2,
+										"value": "9999"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 915761572685499,
+									"parameters": {
+										"variable": "DemonEssence",
+										"comparison": 1,
+										"value": "666"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 960131507524944,
+									"parameters": {
+										"layer": "\"ThirdScene\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 967838077657743,
+									"parameters": {
+										"layer": "\"FourthScene\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 741262593147430,
+									"parameters": {
+										"variable": "texto",
+										"value": "\"But then, the boss leans in close and says in a deep, menacing voice, [color=#ffd800]Alister, my boy... you've done well. But there's one more thing I need you to do for me.[/color]\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "CutscenesTexts",
+									"sid": 809954456545003,
+									"parameters": {
+										"text": "texto",
+										"duration": "len(texto) * fator"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 918461039009529,
+									"parameters": {
+										"tag": "\"Next\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 173132370993637,
+									"parameters": {
+										"variable": "CutsceneStep",
+										"value": "7"
+									}
+								}
+							],
+							"sid": 200194231345136
 						}
-					],
-					"sid": 415075492402409
+					]
 				},
 				{
 					"eventType": "block",
@@ -615,6 +1133,63 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 922655953040980,
+							"parameters": {
+								"layer": "\"FourthScene\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 621828055144954,
+							"parameters": {
+								"layer": "\"FifthScene\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 589702285706174,
+							"parameters": {
+								"object-to-create": "SceneFrames",
+								"layer": "\"FifthScene\"",
+								"x": "162",
+								"y": "144",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "SceneFrames",
+							"sid": 719249710172152,
+							"parameters": {
+								"width": "327",
+								"height": "200"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "SceneFrames",
+							"sid": 785037250969493,
+							"parameters": {
+								"animation": "\"BossGIF3\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "SceneFrames",
+							"sid": 928131867256046,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -739,6 +1314,27 @@
 				}
 			],
 			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "SceneFrames",
+					"sid": 522026046786717,
+					"parameters": {
+						"animation": "\"BossGIF3\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "SceneFrames",
+					"sid": 470071639296645
+				}
+			],
+			"sid": 319629248540905
 		}
 	],
 	"sid": 298241731374286

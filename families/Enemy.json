@@ -16,6 +16,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 388134533556878
+		},
+		{
+			"name": "HP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 563733677209663
+		},
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 891182259966463
 		}
 	],
 	"behaviorTypes": [
@@ -45,7 +59,12 @@
 			"sid": 906623259027091
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "replacecolor",
+			"name": "ReplaceColor"
+		}
+	],
 	"members": [
 		"Enemy1",
 		"Enemy2",

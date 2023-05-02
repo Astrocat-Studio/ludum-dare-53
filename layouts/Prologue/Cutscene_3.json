@@ -14,12 +14,12 @@
 							"type": "SceneFrames",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "BossGIF3",
+								"initial-animation": "BossGIF2",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 19,
+							"uid": 127,
 							"instanceVariables": {},
 							"behaviors": {
 								"MoveTo": {
@@ -35,10 +35,10 @@
 								}
 							},
 							"world": {
-								"x": 162.00001111449302,
-								"y": 143.9999992116195,
-								"width": 327.14068711518684,
-								"height": 199.22913856663286,
+								"x": 162,
+								"y": 144,
+								"width": 327,
+								"height": 200,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -110,10 +110,10 @@
 								}
 							},
 							"world": {
-								"x": 162.00000592930186,
-								"y": 143.99998827448923,
-								"width": 327.14068711518684,
-								"height": 199.22913856663286,
+								"x": 162,
+								"y": 144,
+								"width": 327,
+								"height": 200,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [

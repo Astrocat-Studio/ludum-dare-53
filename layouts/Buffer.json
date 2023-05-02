@@ -55,12 +55,13 @@
 						"State_Machine": "Idle",
 						"Direction": 0,
 						"Gun": 0,
-						"ShootCooldown": false
+						"ShootCooldown": false,
+						"SwitchGuns": false
 					},
 					"behaviors": {
 						"8Direction": {
 							"properties": {
-								"max-speed": 65,
+								"max-speed": 85,
 								"acceleration": 600,
 								"deceleration": 500,
 								"directions": "dir-8",
@@ -147,7 +148,9 @@
 						"live-preview": false
 					},
 					"uid": 39,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"BulletUID": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -190,7 +193,7 @@
 					"type": "Ammo",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "PistolShoot",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -239,7 +242,9 @@
 					"uid": 44,
 					"instanceVariables": {
 						"SkillActived": false,
-						"StateMachine": ""
+						"StateMachine": "",
+						"HP": 1,
+						"Level": 1
 					},
 					"behaviors": {
 						"Flash": {
@@ -284,7 +289,27 @@
 								"set-angle": "no",
 								"allow-sliding": false,
 								"default-controls": false,
-								"enabled": true
+								"enabled": false
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": false,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"tolerance": 0.01
 							}
 						}
 					},
@@ -317,7 +342,9 @@
 					"uid": 45,
 					"instanceVariables": {
 						"SkillActived": false,
-						"StateMachine": ""
+						"StateMachine": "",
+						"HP": 1,
+						"Level": 1
 					},
 					"behaviors": {
 						"Flash": {
@@ -337,7 +364,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 22,
+								"range": 28,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -362,7 +389,27 @@
 								"set-angle": "no",
 								"allow-sliding": false,
 								"default-controls": false,
-								"enabled": true
+								"enabled": false
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": false,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"tolerance": 0.01
 							}
 						}
 					},
@@ -416,7 +463,7 @@
 					"type": "Enemy3",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Walking",
+						"initial-animation": "Atack",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -424,7 +471,9 @@
 					"uid": 52,
 					"instanceVariables": {
 						"SkillActived": false,
-						"StateMachine": ""
+						"StateMachine": "",
+						"HP": 1,
+						"Level": 1
 					},
 					"behaviors": {
 						"Flash": {
@@ -444,7 +493,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 54,
+								"range": 28,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -469,15 +518,49 @@
 								"set-angle": "no",
 								"allow-sliding": false,
 								"default-controls": false,
-								"enabled": true
+								"enabled": false
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "opacity",
+								"wave": "sine",
+								"period": 8,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 100,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": false,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"tolerance": 0.01
 							}
 						}
 					},
 					"world": {
 						"x": 399.06989500041567,
 						"y": 42.8476348593591,
-						"width": 36,
-						"height": 32,
+						"width": 64,
+						"height": 64,
 						"originX": 0.46875,
 						"originY": 0.671875,
 						"color": [
@@ -656,10 +739,10 @@
 						"RPGAmmoInMagazine": 24,
 						"ShotgunAmmoInMagazine": 4,
 						"ActualGun": "Pistol",
-						"TotalAmmoPistol": 99,
-						"TotalAmmoShotgun": 15,
-						"TotalAmmoRifle": 120,
-						"TotalAmmoRPG": 8
+						"TotalAmmoPistol": 90,
+						"TotalAmmoShotgun": 35,
+						"TotalAmmoRifle": 240,
+						"TotalAmmoRPG": 16
 					},
 					"behaviors": {},
 					"world": {
@@ -781,6 +864,47 @@
 						"y": 48.395745297693125,
 						"width": 30,
 						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SceneFrames",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BossGIF3",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 19,
+					"instanceVariables": {},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 35,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 414,
+						"y": -125,
+						"width": 327.14068711518684,
+						"height": 199.22913856663286,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
